@@ -1,0 +1,103 @@
+
+HERE is THE CLASS...
+
+class Burger
+	declarations	
+		private string bunType
+		private string meatType
+		private num meatNum
+		private string toppingType
+		private bool moreToppings		
+		private string myBurger
+		
+	public void setBunType (string: bun)
+		bunType = bun
+	return	
+	public void setMeatType (string: meat)
+		meatType = meat
+	return	
+	public void setMeatNum (num : patties)
+		meatNum = patties
+	return	
+	public void setToppingType (string: topping)
+		toppingType = topping
+	return	
+
+	public string getBunType( )
+	return bunType
+	public string getMeatType( )
+	return meatType
+	public num getMeatNum( )
+	return meatNum
+	public string getToppingType( )
+	return toppingType
+	public bool askMoreToppings ( )
+	return moreToppings
+	
+	public void takeOrder( )	
+	return
+	
+	public string assembleBurger( )
+		myBurger = "Here is your ", bunType( ), " bun with ", meatNum, " patties of ", meatType, " and ", allToppings
+	return myBurger
+
+endClass	
+	
+	
+	takeOrder( )	
+		output "What kind of bun?"
+		input bunType
+			while bunType <> (wheat OR hoagie OR onionRoll)
+				output "You must enter wheat, hoagie, or onion roll."
+				input bunType
+			endwhile
+		return bunType
+		
+		output "What kind of meat?"
+		input meatType
+			while meatType <> (beef OR chicken OR fish)
+				output "You must enter beef, chicken, or fish."
+				input meatType
+			endwhile
+		return meatType
+		
+		output "How many patties?"
+		input meatNum
+			while meatNum <> (1 OR 2 OR 3)
+				output "You must enter 1, 2, or 3."
+				input meatNum
+			endwhile
+		return meatNum
+		
+		output "What is the first kind of topping for your burger?"
+		input toppingType
+			while toppingType <> (tomato OR lettuce OR cheese OR bacon OR nothing)
+				output "You must enter tomato, lettuce, cheese, or bacon, or else write 'nothing'."
+				input toppingType
+			endwhile
+		allToppings = toppingType	
+		output "Another topping?"
+		input moreToppings
+			while moreToppings == true
+				output "What is the next kind of topping for your burger?"
+				input toppingType
+					while toppingType <> (tomato OR lettuce OR cheese OR bacon OR nothing)
+						output "You must enter tomato, lettuce, cheese, or bacon, or else write 'nothing'."
+						input toppingType
+					endwhile
+				allToppings = allToppings + " and " + toppingType
+			endwhile
+		return allToppings
+		
+		output "Thank you for your order."
+	return
+	
+
+INSTANCE OF THE CLASS
+
+start
+	declarations
+		Burger ktBurger
+	ktBurger.takeOrder( )
+	ktBurger.assembleBurger ( )
+stop	
