@@ -1,0 +1,82 @@
+
+myBurger
+
+start
+	declarations
+		public string myIngredient
+		public bool nextBurger == true
+		public string ingredientType
+		public string topping
+		
+	while nextBurger == true
+		output "What is the first part of your burger?"
+		input myIngredient
+		while myIngredient != "Z"
+			getIngredientDetails()
+			output "Anything else on your burger? (or type "Z" to stop)"
+			input myIngredient
+		endwhile
+	endwhile
+	finishOrder()
+stop
+	
+getIngredientDetails()
+	output "Choose the category."
+	input ingredientType
+	output "Select a topping from that category."
+	input topping
+	switch (ingredientType)
+	{	case bun;
+			switch (topping)
+			{
+				case white;
+					return "white bun";
+					break;
+				case wheat;
+					return "wheat bun";
+					break;
+				default;	
+			}
+		case meat;
+			{
+			switch (topping)
+				case beef;
+					return "beef hamburger";
+					break;
+				case chicken;
+					return "chicken";
+					break;
+				default;
+			}		
+		case topping;
+			{
+			switch (topping)
+				case americanCheese;
+					return "American cheese";
+					break;
+				case tomato;
+					return "tomato";
+					break;
+				default;
+			}		
+		case sauce;
+			{
+			switch (topping)
+				case mayo;
+					return "mayonnaise";
+					break;
+				case mustard;
+					return "mustard";
+					break;
+				default;
+			}
+		default;
+		myBurger = myBurger + topping + " with "
+		return myBurger;
+	}
+	
+finishOrder()
+	output "You have ordered ", myBurger, ". Thank you!"
+	output "Click here to order your next burger, or here when you are all done."
+	input nextBurger
+return
