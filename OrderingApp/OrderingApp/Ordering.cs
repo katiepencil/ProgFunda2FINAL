@@ -16,6 +16,7 @@ namespace OrderingApp
         string bunType = "";
         int pattyNum;
         string orderStep; //this keeps track of what panel you're on
+        string chosenBun;
 
         Array[] cheeseType;
         Array[] toppings;
@@ -30,14 +31,14 @@ namespace OrderingApp
         private void Ordering_Load(object sender, EventArgs e)
         {
             pnlStart.Visible = true;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
             pnlLocation.Visible = false;
             pnlOrderType.Visible = false;
-            pnlPrevNext.Visible = false;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            lbl1.Text = "Future menu here!";
+            pnlOrderStart.Visible = false;
+            pnlBunChoice.Visible = false;
+            pnlFinalOrder.Visible = false;
+            
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -46,47 +47,139 @@ namespace OrderingApp
             //shut one off, turn the other on!
         {
             pnlStart.Visible = false;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
             pnlLocation.Visible = true;
-            orderStep = "location";
+            pnlOrderType.Visible = false;
+            pnlOrderStart.Visible = false;
+            pnlBunChoice.Visible = false;
+            pnlFinalOrder.Visible = false;
+            //orderStep = "location";
         }
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            takeOut = false;
+            //takeOut = false;
+            pnlStart.Visible = false;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
             pnlLocation.Visible = false;
             pnlOrderType.Visible = true;
-            orderStep = "orderType";
+            pnlOrderStart.Visible = false;
+            pnlBunChoice.Visible = false;
+            pnlFinalOrder.Visible = false;
+           // orderStep = "orderType";
         }
 
         private void btnOut_Click(object sender, EventArgs e)
         {
-            takeOut = true;
+            //takeOut = true;
+            pnlStart.Visible = false;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
             pnlLocation.Visible = false;
             pnlOrderType.Visible = true;
-            orderStep = "orderType";
+            pnlOrderStart.Visible = false;
+            pnlBunChoice.Visible = false;
+            pnlFinalOrder.Visible = false;
+            //orderStep = "orderType";
         }
 
  
       // here is code....  private void pnlLocation_VisibleChanged
 
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            pnlLocation.Visible = true;
-            pnlOrderType.Visible = false;
-            orderStep = "location";
+        //private void btnPrev_Click(object sender, EventArgs e)
+        //{
+        //    pnlStart.Visible = false;
+        //        pnlBurgerNav.Visible = false;
+        //        pnlPrevNext.Visible = false;
+        //    pnlLocation.Visible = false;
+        //    pnlOrderType.Visible = false;
+        //    pnlBunChoice.Visible = true;
 
-            switch (orderStep)
-            {
-                case "start":
-                case "location":    
-                    pnlPrevNext.Visible = false;
-                    break;
-                case "orderType":
-                    pnlPrevNext.Visible = true;
-                    break;
-                default:
-                    break;
-            }
+            //orderStep = "location";
+
+            //switch (orderStep)
+            //{
+            //    case "start":
+            //    case "location":    
+            //        pnlPrevNext.Visible = false;
+            //        break;
+            //    case "orderType":
+            //        pnlPrevNext.Visible = true;
+            //        break;
+            //    default:
+            //        break;
+            //}
+        //}
+
+        private void btnBun_Click(object sender, EventArgs e)
+        {
+           // orderStep = "bunChoice";
+            pnlStart.Visible = false;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
+            pnlLocation.Visible = false;
+            pnlOrderType.Visible = false;
+            pnlOrderStart.Visible = false;
+            pnlBunChoice.Visible = true;
+            pnlFinalOrder.Visible = false;
+        }
+
+        private void btnBuild_Click(object sender, EventArgs e)
+        {
+            //orderStep = "bunChoice";
+            pnlStart.Visible = false;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
+            pnlLocation.Visible = false;
+            pnlOrderType.Visible = false;
+            pnlOrderStart.Visible = true;
+            pnlBunChoice.Visible = false;
+            pnlFinalOrder.Visible = false;
+        }
+
+        private void btnChooseBun_Click(object sender, EventArgs e)
+        {
+            pnlStart.Visible = false;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
+            pnlLocation.Visible = false;
+            pnlOrderType.Visible = false;
+            pnlOrderStart.Visible = false;
+            pnlBunChoice.Visible = true;
+            pnlFinalOrder.Visible = false;
+        }
+
+        private void btnBunWheat_Click(object sender, EventArgs e)
+        {
+            pnlStart.Visible = false;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
+            pnlLocation.Visible = false;
+            pnlOrderType.Visible = false;
+            pnlOrderStart.Visible = true;
+            pnlBunChoice.Visible = false;
+            pnlFinalOrder.Visible = false;
+
+            chosenBun = "wheat";
+        }
+
+        private void btnAllDone_Click(object sender, EventArgs e)
+        {
+            pnlStart.Visible = false;
+                pnlBurgerNav.Visible = false;
+                pnlPrevNext.Visible = false;
+            pnlLocation.Visible = false;
+            pnlOrderType.Visible = false;
+            pnlOrderStart.Visible = false;
+            pnlBunChoice.Visible = false;
+            pnlFinalOrder.Visible = true;
+
+            lblFinalOrderReport.Text = chosenBun;
+        }
+
+        
+
         }
     }
-}
