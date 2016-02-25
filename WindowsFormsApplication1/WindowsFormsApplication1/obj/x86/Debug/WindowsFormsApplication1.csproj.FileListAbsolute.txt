@@ -5,3 +5,4 @@ C:\Users\thokata\Desktop\ProgFunda2FINAL\WindowsFormsApplication1\WindowsFormsAp
 C:\Users\thokata\Desktop\ProgFunda2FINAL\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
 C:\Users\thokata\Desktop\ProgFunda2FINAL\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
 C:\Users\thokata\Desktop\ProgFunda2FINAL\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Ordering.resources
+C:\Users\thokata\Desktop\ProgFunda2FINAL\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache

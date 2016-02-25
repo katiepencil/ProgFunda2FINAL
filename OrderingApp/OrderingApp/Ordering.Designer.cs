@@ -54,24 +54,31 @@
             this.btnSauce = new System.Windows.Forms.Button();
             this.btnBun = new System.Windows.Forms.Button();
             this.pnlSummary = new System.Windows.Forms.Panel();
+            this.lblSummaryConfirm = new System.Windows.Forms.Label();
+            this.btnStartOver = new System.Windows.Forms.Button();
+            this.btnYesDone = new System.Windows.Forms.Button();
             this.lblFinalOrderReport = new System.Windows.Forms.Label();
             this.pnlToppings = new System.Windows.Forms.Panel();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnTomato = new System.Windows.Forms.Button();
+            this.btnOnion = new System.Windows.Forms.Button();
+            this.btnLettuce = new System.Windows.Forms.Button();
+            this.btnPickles = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlStack = new System.Windows.Forms.Panel();
+            this.lblStack = new System.Windows.Forms.Label();
             this.pnlCheese = new System.Windows.Forms.Panel();
+            this.btnCheese1 = new System.Windows.Forms.Button();
+            this.btnCheese2 = new System.Windows.Forms.Button();
             this.lblCheese = new System.Windows.Forms.Label();
             this.btnNoCheese = new System.Windows.Forms.Button();
             this.btnCheese3 = new System.Windows.Forms.Button();
             this.pnlSauce = new System.Windows.Forms.Panel();
+            this.btnAllDone = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnBBQ = new System.Windows.Forms.Button();
+            this.btnMayo = new System.Windows.Forms.Button();
+            this.btnKetsup = new System.Windows.Forms.Button();
+            this.btnMustard = new System.Windows.Forms.Button();
             this.pnlBun = new System.Windows.Forms.Panel();
             this.btnPotatoBun = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,13 +86,11 @@
             this.btnWheatBun = new System.Windows.Forms.Button();
             this.pnlSpecialty = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnVeggieBurger = new System.Windows.Forms.Button();
+            this.btnBigMac = new System.Windows.Forms.Button();
             this.pnlComplete = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblStack = new System.Windows.Forms.Label();
-            this.btnCheese2 = new System.Windows.Forms.Button();
-            this.btnCheese1 = new System.Windows.Forms.Button();
+            this.lblStackBun = new System.Windows.Forms.Label();
             this.pnlStart.SuspendLayout();
             this.pnlLocation.SuspendLayout();
             this.pnlBuild.SuspendLayout();
@@ -107,9 +112,9 @@
             this.pnlStart.BackColor = System.Drawing.Color.MistyRose;
             this.pnlStart.Controls.Add(this.lblStart);
             this.pnlStart.Controls.Add(this.btnStart);
-            this.pnlStart.Location = new System.Drawing.Point(125, 79);
+            this.pnlStart.Location = new System.Drawing.Point(138, 79);
             this.pnlStart.Name = "pnlStart";
-            this.pnlStart.Size = new System.Drawing.Size(876, 398);
+            this.pnlStart.Size = new System.Drawing.Size(863, 398);
             this.pnlStart.TabIndex = 1;
             // 
             // lblStart
@@ -140,9 +145,9 @@
             this.pnlLocation.Controls.Add(this.lblLocation);
             this.pnlLocation.Controls.Add(this.btnOut);
             this.pnlLocation.Controls.Add(this.btnIn);
-            this.pnlLocation.Location = new System.Drawing.Point(125, 79);
+            this.pnlLocation.Location = new System.Drawing.Point(138, 79);
             this.pnlLocation.Name = "pnlLocation";
-            this.pnlLocation.Size = new System.Drawing.Size(873, 398);
+            this.pnlLocation.Size = new System.Drawing.Size(860, 398);
             this.pnlLocation.TabIndex = 2;
             this.pnlLocation.Visible = false;
             // 
@@ -189,9 +194,9 @@
             this.pnlBuild.Controls.Add(this.label5);
             this.pnlBuild.Controls.Add(this.lblBunChoice);
             this.pnlBuild.Controls.Add(this.btnBuildMyBurger);
-            this.pnlBuild.Location = new System.Drawing.Point(125, 83);
+            this.pnlBuild.Location = new System.Drawing.Point(138, 83);
             this.pnlBuild.Name = "pnlBuild";
-            this.pnlBuild.Size = new System.Drawing.Size(879, 404);
+            this.pnlBuild.Size = new System.Drawing.Size(866, 404);
             this.pnlBuild.TabIndex = 3;
             this.pnlBuild.Visible = false;
             // 
@@ -246,9 +251,9 @@
             this.pnlOrderType.Controls.Add(this.lblOrderType);
             this.pnlOrderType.Controls.Add(this.btnSpecialty);
             this.pnlOrderType.Controls.Add(this.btnBuild);
-            this.pnlOrderType.Location = new System.Drawing.Point(128, 79);
+            this.pnlOrderType.Location = new System.Drawing.Point(138, 79);
             this.pnlOrderType.Name = "pnlOrderType";
-            this.pnlOrderType.Size = new System.Drawing.Size(870, 402);
+            this.pnlOrderType.Size = new System.Drawing.Size(860, 402);
             this.pnlOrderType.TabIndex = 3;
             this.pnlOrderType.Visible = false;
             this.pnlOrderType.VisibleChanged += new System.EventHandler(this.pnlOrderType_VisibleChanged);
@@ -289,30 +294,38 @@
             // 
             // pnlPrevNext
             // 
+            this.pnlPrevNext.Controls.Add(this.btnAllDone);
             this.pnlPrevNext.Controls.Add(this.btnNext);
             this.pnlPrevNext.Controls.Add(this.btnPrev);
             this.pnlPrevNext.Location = new System.Drawing.Point(138, 502);
             this.pnlPrevNext.Name = "pnlPrevNext";
             this.pnlPrevNext.Size = new System.Drawing.Size(754, 56);
             this.pnlPrevNext.TabIndex = 4;
+            this.pnlPrevNext.Visible = false;
             // 
             // btnNext
             // 
-            this.btnNext.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.BackColor = System.Drawing.Color.LightPink;
+            this.btnNext.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Location = new System.Drawing.Point(572, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(152, 50);
+            this.btnNext.Size = new System.Drawing.Size(182, 50);
             this.btnNext.TabIndex = 0;
             this.btnNext.Text = "Next  >>>";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrev
             // 
-            this.btnPrev.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.BackColor = System.Drawing.Color.LightPink;
+            this.btnPrev.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrev.Location = new System.Drawing.Point(54, 3);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(160, 50);
+            this.btnPrev.Size = new System.Drawing.Size(204, 50);
             this.btnPrev.TabIndex = 1;
             this.btnPrev.Text = "<<<   Back";
+            this.btnPrev.UseVisualStyleBackColor = false;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // pnlNav
             // 
@@ -323,7 +336,7 @@
             this.pnlNav.Controls.Add(this.btnBun);
             this.pnlNav.Location = new System.Drawing.Point(179, 8);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(610, 61);
+            this.pnlNav.Size = new System.Drawing.Size(632, 61);
             this.pnlNav.TabIndex = 5;
             this.pnlNav.Visible = false;
             // 
@@ -382,84 +395,124 @@
             // pnlSummary
             // 
             this.pnlSummary.BackColor = System.Drawing.Color.LightCoral;
+            this.pnlSummary.Controls.Add(this.lblSummaryConfirm);
+            this.pnlSummary.Controls.Add(this.btnStartOver);
+            this.pnlSummary.Controls.Add(this.btnYesDone);
             this.pnlSummary.Controls.Add(this.lblFinalOrderReport);
-            this.pnlSummary.Location = new System.Drawing.Point(125, 80);
+            this.pnlSummary.Location = new System.Drawing.Point(138, 80);
             this.pnlSummary.Name = "pnlSummary";
-            this.pnlSummary.Size = new System.Drawing.Size(879, 412);
+            this.pnlSummary.Size = new System.Drawing.Size(866, 412);
             this.pnlSummary.TabIndex = 6;
             this.pnlSummary.Visible = false;
+            // 
+            // lblSummaryConfirm
+            // 
+            this.lblSummaryConfirm.AutoSize = true;
+            this.lblSummaryConfirm.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSummaryConfirm.Location = new System.Drawing.Point(332, 300);
+            this.lblSummaryConfirm.Name = "lblSummaryConfirm";
+            this.lblSummaryConfirm.Size = new System.Drawing.Size(236, 27);
+            this.lblSummaryConfirm.TabIndex = 3;
+            this.lblSummaryConfirm.Text = "Is this correct?";
+            // 
+            // btnStartOver
+            // 
+            this.btnStartOver.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnStartOver.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartOver.Location = new System.Drawing.Point(193, 277);
+            this.btnStartOver.Name = "btnStartOver";
+            this.btnStartOver.Size = new System.Drawing.Size(103, 69);
+            this.btnStartOver.TabIndex = 2;
+            this.btnStartOver.Text = "No";
+            this.btnStartOver.UseVisualStyleBackColor = false;
+            this.btnStartOver.Click += new System.EventHandler(this.btnStartOver_Click);
+            // 
+            // btnYesDone
+            // 
+            this.btnYesDone.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnYesDone.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYesDone.Location = new System.Drawing.Point(607, 277);
+            this.btnYesDone.Name = "btnYesDone";
+            this.btnYesDone.Size = new System.Drawing.Size(101, 69);
+            this.btnYesDone.TabIndex = 1;
+            this.btnYesDone.Text = "Yes";
+            this.btnYesDone.UseVisualStyleBackColor = false;
+            this.btnYesDone.Click += new System.EventHandler(this.btnYesDone_Click);
             // 
             // lblFinalOrderReport
             // 
             this.lblFinalOrderReport.AutoSize = true;
             this.lblFinalOrderReport.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinalOrderReport.Location = new System.Drawing.Point(172, 85);
+            this.lblFinalOrderReport.Location = new System.Drawing.Point(237, 36);
             this.lblFinalOrderReport.Name = "lblFinalOrderReport";
-            this.lblFinalOrderReport.Size = new System.Drawing.Size(322, 23);
+            this.lblFinalOrderReport.Size = new System.Drawing.Size(0, 23);
             this.lblFinalOrderReport.TabIndex = 0;
-            this.lblFinalOrderReport.Text = "final report will go here!";
             // 
             // pnlToppings
             // 
             this.pnlToppings.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pnlToppings.Controls.Add(this.button16);
-            this.pnlToppings.Controls.Add(this.button15);
-            this.pnlToppings.Controls.Add(this.button14);
-            this.pnlToppings.Controls.Add(this.button13);
+            this.pnlToppings.Controls.Add(this.btnTomato);
+            this.pnlToppings.Controls.Add(this.btnOnion);
+            this.pnlToppings.Controls.Add(this.btnLettuce);
+            this.pnlToppings.Controls.Add(this.btnPickles);
             this.pnlToppings.Controls.Add(this.label1);
-            this.pnlToppings.Location = new System.Drawing.Point(125, 79);
+            this.pnlToppings.Location = new System.Drawing.Point(138, 79);
             this.pnlToppings.Name = "pnlToppings";
-            this.pnlToppings.Size = new System.Drawing.Size(879, 410);
+            this.pnlToppings.Size = new System.Drawing.Size(866, 410);
             this.pnlToppings.TabIndex = 7;
             this.pnlToppings.Visible = false;
             // 
-            // button16
+            // btnTomato
             // 
-            this.button16.BackColor = System.Drawing.Color.Gold;
-            this.button16.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.DarkRed;
-            this.button16.Location = new System.Drawing.Point(555, 109);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(122, 46);
-            this.button16.TabIndex = 5;
-            this.button16.Text = "Sauces";
-            this.button16.UseVisualStyleBackColor = false;
+            this.btnTomato.BackColor = System.Drawing.Color.Gold;
+            this.btnTomato.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTomato.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnTomato.Location = new System.Drawing.Point(520, 109);
+            this.btnTomato.Name = "btnTomato";
+            this.btnTomato.Size = new System.Drawing.Size(144, 46);
+            this.btnTomato.TabIndex = 5;
+            this.btnTomato.Text = "Tomato";
+            this.btnTomato.UseVisualStyleBackColor = false;
+            this.btnTomato.Click += new System.EventHandler(this.btnTomato_Click);
             // 
-            // button15
+            // btnOnion
             // 
-            this.button15.BackColor = System.Drawing.Color.Gold;
-            this.button15.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.DarkRed;
-            this.button15.Location = new System.Drawing.Point(542, 213);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(122, 46);
-            this.button15.TabIndex = 4;
-            this.button15.Text = "Sauces";
-            this.button15.UseVisualStyleBackColor = false;
+            this.btnOnion.BackColor = System.Drawing.Color.Gold;
+            this.btnOnion.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOnion.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnOnion.Location = new System.Drawing.Point(542, 213);
+            this.btnOnion.Name = "btnOnion";
+            this.btnOnion.Size = new System.Drawing.Size(122, 46);
+            this.btnOnion.TabIndex = 4;
+            this.btnOnion.Text = "Onion";
+            this.btnOnion.UseVisualStyleBackColor = false;
+            this.btnOnion.Click += new System.EventHandler(this.btnOnion_Click);
             // 
-            // button14
+            // btnLettuce
             // 
-            this.button14.BackColor = System.Drawing.Color.Gold;
-            this.button14.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.DarkRed;
-            this.button14.Location = new System.Drawing.Point(155, 208);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(122, 46);
-            this.button14.TabIndex = 3;
-            this.button14.Text = "Sauces";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnLettuce.BackColor = System.Drawing.Color.Gold;
+            this.btnLettuce.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLettuce.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnLettuce.Location = new System.Drawing.Point(155, 208);
+            this.btnLettuce.Name = "btnLettuce";
+            this.btnLettuce.Size = new System.Drawing.Size(148, 46);
+            this.btnLettuce.TabIndex = 3;
+            this.btnLettuce.Text = "Lettuce";
+            this.btnLettuce.UseVisualStyleBackColor = false;
+            this.btnLettuce.Click += new System.EventHandler(this.btnLettuce_Click);
             // 
-            // button13
+            // btnPickles
             // 
-            this.button13.BackColor = System.Drawing.Color.Gold;
-            this.button13.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.DarkRed;
-            this.button13.Location = new System.Drawing.Point(155, 104);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(122, 46);
-            this.button13.TabIndex = 2;
-            this.button13.Text = "Sauces";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnPickles.BackColor = System.Drawing.Color.Gold;
+            this.btnPickles.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPickles.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnPickles.Location = new System.Drawing.Point(155, 104);
+            this.btnPickles.Name = "btnPickles";
+            this.btnPickles.Size = new System.Drawing.Size(148, 46);
+            this.btnPickles.TabIndex = 2;
+            this.btnPickles.Text = "Pickles";
+            this.btnPickles.UseVisualStyleBackColor = false;
+            this.btnPickles.Click += new System.EventHandler(this.btnPickles_Click);
             // 
             // label1
             // 
@@ -474,11 +527,20 @@
             // pnlStack
             // 
             this.pnlStack.BackColor = System.Drawing.Color.Tomato;
+            this.pnlStack.Controls.Add(this.lblStackBun);
             this.pnlStack.Controls.Add(this.lblStack);
             this.pnlStack.Location = new System.Drawing.Point(12, 12);
             this.pnlStack.Name = "pnlStack";
-            this.pnlStack.Size = new System.Drawing.Size(95, 480);
+            this.pnlStack.Size = new System.Drawing.Size(120, 480);
             this.pnlStack.TabIndex = 6;
+            // 
+            // lblStack
+            // 
+            this.lblStack.AutoSize = true;
+            this.lblStack.Location = new System.Drawing.Point(24, 61);
+            this.lblStack.Name = "lblStack";
+            this.lblStack.Size = new System.Drawing.Size(0, 17);
+            this.lblStack.TabIndex = 0;
             // 
             // pnlCheese
             // 
@@ -488,11 +550,37 @@
             this.pnlCheese.Controls.Add(this.lblCheese);
             this.pnlCheese.Controls.Add(this.btnNoCheese);
             this.pnlCheese.Controls.Add(this.btnCheese3);
-            this.pnlCheese.Location = new System.Drawing.Point(125, 80);
+            this.pnlCheese.Location = new System.Drawing.Point(138, 80);
             this.pnlCheese.Name = "pnlCheese";
-            this.pnlCheese.Size = new System.Drawing.Size(879, 407);
+            this.pnlCheese.Size = new System.Drawing.Size(866, 407);
             this.pnlCheese.TabIndex = 6;
             this.pnlCheese.Visible = false;
+            // 
+            // btnCheese1
+            // 
+            this.btnCheese1.BackColor = System.Drawing.Color.Gold;
+            this.btnCheese1.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheese1.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnCheese1.Location = new System.Drawing.Point(89, 147);
+            this.btnCheese1.Name = "btnCheese1";
+            this.btnCheese1.Size = new System.Drawing.Size(214, 72);
+            this.btnCheese1.TabIndex = 6;
+            this.btnCheese1.Text = "American";
+            this.btnCheese1.UseVisualStyleBackColor = false;
+            this.btnCheese1.Click += new System.EventHandler(this.btnCheese1_Click);
+            // 
+            // btnCheese2
+            // 
+            this.btnCheese2.BackColor = System.Drawing.Color.Gold;
+            this.btnCheese2.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheese2.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnCheese2.Location = new System.Drawing.Point(337, 144);
+            this.btnCheese2.Name = "btnCheese2";
+            this.btnCheese2.Size = new System.Drawing.Size(199, 72);
+            this.btnCheese2.TabIndex = 5;
+            this.btnCheese2.Text = "Cheddar";
+            this.btnCheese2.UseVisualStyleBackColor = false;
+            this.btnCheese2.Click += new System.EventHandler(this.btnCheese2_Click);
             // 
             // lblCheese
             // 
@@ -534,15 +622,27 @@
             // 
             this.pnlSauce.BackColor = System.Drawing.Color.SandyBrown;
             this.pnlSauce.Controls.Add(this.label7);
-            this.pnlSauce.Controls.Add(this.button5);
-            this.pnlSauce.Controls.Add(this.button6);
-            this.pnlSauce.Controls.Add(this.button7);
-            this.pnlSauce.Controls.Add(this.button8);
-            this.pnlSauce.Location = new System.Drawing.Point(125, 82);
+            this.pnlSauce.Controls.Add(this.btnBBQ);
+            this.pnlSauce.Controls.Add(this.btnMayo);
+            this.pnlSauce.Controls.Add(this.btnKetsup);
+            this.pnlSauce.Controls.Add(this.btnMustard);
+            this.pnlSauce.Location = new System.Drawing.Point(138, 79);
             this.pnlSauce.Name = "pnlSauce";
-            this.pnlSauce.Size = new System.Drawing.Size(879, 404);
+            this.pnlSauce.Size = new System.Drawing.Size(866, 413);
             this.pnlSauce.TabIndex = 7;
             this.pnlSauce.Visible = false;
+            // 
+            // btnAllDone
+            // 
+            this.btnAllDone.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnAllDone.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllDone.Location = new System.Drawing.Point(323, 4);
+            this.btnAllDone.Name = "btnAllDone";
+            this.btnAllDone.Size = new System.Drawing.Size(192, 48);
+            this.btnAllDone.TabIndex = 5;
+            this.btnAllDone.Text = "All done!";
+            this.btnAllDone.UseVisualStyleBackColor = false;
+            this.btnAllDone.Click += new System.EventHandler(this.btnAllDone_Click);
             // 
             // label7
             // 
@@ -555,53 +655,57 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Choose your sauces!";
             // 
-            // button5
+            // btnBBQ
             // 
-            this.button5.BackColor = System.Drawing.Color.Gold;
-            this.button5.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.DarkRed;
-            this.button5.Location = new System.Drawing.Point(440, 271);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(161, 46);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Toppings";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnBBQ.BackColor = System.Drawing.Color.Gold;
+            this.btnBBQ.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBBQ.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnBBQ.Location = new System.Drawing.Point(440, 271);
+            this.btnBBQ.Name = "btnBBQ";
+            this.btnBBQ.Size = new System.Drawing.Size(161, 46);
+            this.btnBBQ.TabIndex = 3;
+            this.btnBBQ.Text = "BBQ";
+            this.btnBBQ.UseVisualStyleBackColor = false;
+            this.btnBBQ.Click += new System.EventHandler(this.btnBBQ_Click);
             // 
-            // button6
+            // btnMayo
             // 
-            this.button6.BackColor = System.Drawing.Color.Gold;
-            this.button6.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.DarkRed;
-            this.button6.Location = new System.Drawing.Point(440, 156);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(129, 46);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Cheese";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnMayo.BackColor = System.Drawing.Color.Gold;
+            this.btnMayo.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMayo.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnMayo.Location = new System.Drawing.Point(445, 158);
+            this.btnMayo.Name = "btnMayo";
+            this.btnMayo.Size = new System.Drawing.Size(129, 46);
+            this.btnMayo.TabIndex = 2;
+            this.btnMayo.Text = "Mayo";
+            this.btnMayo.UseVisualStyleBackColor = false;
+            this.btnMayo.Click += new System.EventHandler(this.btnMayo_Click);
             // 
-            // button7
+            // btnKetsup
             // 
-            this.button7.BackColor = System.Drawing.Color.Gold;
-            this.button7.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.DarkRed;
-            this.button7.Location = new System.Drawing.Point(181, 156);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(122, 46);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Meat";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnKetsup.BackColor = System.Drawing.Color.Gold;
+            this.btnKetsup.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKetsup.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnKetsup.Location = new System.Drawing.Point(181, 156);
+            this.btnKetsup.Name = "btnKetsup";
+            this.btnKetsup.Size = new System.Drawing.Size(172, 46);
+            this.btnKetsup.TabIndex = 1;
+            this.btnKetsup.Text = "Ketsup";
+            this.btnKetsup.UseVisualStyleBackColor = false;
+            this.btnKetsup.Click += new System.EventHandler(this.btnKetsup_Click);
             // 
-            // button8
+            // btnMustard
             // 
-            this.button8.BackColor = System.Drawing.Color.Gold;
-            this.button8.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.DarkRed;
-            this.button8.Location = new System.Drawing.Point(190, 271);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(122, 46);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Bun";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnMustard.BackColor = System.Drawing.Color.Gold;
+            this.btnMustard.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMustard.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnMustard.Location = new System.Drawing.Point(190, 271);
+            this.btnMustard.Name = "btnMustard";
+            this.btnMustard.Size = new System.Drawing.Size(152, 46);
+            this.btnMustard.TabIndex = 0;
+            this.btnMustard.Text = "Mustard";
+            this.btnMustard.UseVisualStyleBackColor = false;
+            this.btnMustard.Click += new System.EventHandler(this.btnMustard_Click);
             // 
             // pnlBun
             // 
@@ -610,9 +714,9 @@
             this.pnlBun.Controls.Add(this.label2);
             this.pnlBun.Controls.Add(this.btnWhiteBun);
             this.pnlBun.Controls.Add(this.btnWheatBun);
-            this.pnlBun.Location = new System.Drawing.Point(125, 80);
+            this.pnlBun.Location = new System.Drawing.Point(138, 80);
             this.pnlBun.Name = "pnlBun";
-            this.pnlBun.Size = new System.Drawing.Size(879, 407);
+            this.pnlBun.Size = new System.Drawing.Size(866, 407);
             this.pnlBun.TabIndex = 4;
             this.pnlBun.Visible = false;
             this.pnlBun.VisibleChanged += new System.EventHandler(this.pnlBun_VisibleChanged);
@@ -665,16 +769,17 @@
             this.btnWheatBun.TabIndex = 0;
             this.btnWheatBun.Text = "Wheat";
             this.btnWheatBun.UseVisualStyleBackColor = false;
+            this.btnWheatBun.Click += new System.EventHandler(this.btnWheatBun_Click);
             // 
             // pnlSpecialty
             // 
             this.pnlSpecialty.BackColor = System.Drawing.Color.Honeydew;
             this.pnlSpecialty.Controls.Add(this.label3);
-            this.pnlSpecialty.Controls.Add(this.button9);
-            this.pnlSpecialty.Controls.Add(this.button10);
-            this.pnlSpecialty.Location = new System.Drawing.Point(125, 82);
+            this.pnlSpecialty.Controls.Add(this.btnVeggieBurger);
+            this.pnlSpecialty.Controls.Add(this.btnBigMac);
+            this.pnlSpecialty.Location = new System.Drawing.Point(138, 82);
             this.pnlSpecialty.Name = "pnlSpecialty";
-            this.pnlSpecialty.Size = new System.Drawing.Size(879, 402);
+            this.pnlSpecialty.Size = new System.Drawing.Size(866, 402);
             this.pnlSpecialty.TabIndex = 4;
             this.pnlSpecialty.Visible = false;
             // 
@@ -689,36 +794,38 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Choose one of these...";
             // 
-            // button9
+            // btnVeggieBurger
             // 
-            this.button9.BackColor = System.Drawing.Color.Turquoise;
-            this.button9.Font = new System.Drawing.Font("Courier New", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button9.Location = new System.Drawing.Point(380, 212);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(210, 102);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "Potato burger";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnVeggieBurger.BackColor = System.Drawing.Color.Turquoise;
+            this.btnVeggieBurger.Font = new System.Drawing.Font("Courier New", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVeggieBurger.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btnVeggieBurger.Location = new System.Drawing.Point(380, 212);
+            this.btnVeggieBurger.Name = "btnVeggieBurger";
+            this.btnVeggieBurger.Size = new System.Drawing.Size(210, 102);
+            this.btnVeggieBurger.TabIndex = 1;
+            this.btnVeggieBurger.Text = "Veggie burger";
+            this.btnVeggieBurger.UseVisualStyleBackColor = false;
+            this.btnVeggieBurger.Click += new System.EventHandler(this.btnVeggieBurger_Click);
             // 
-            // button10
+            // btnBigMac
             // 
-            this.button10.BackColor = System.Drawing.Color.Violet;
-            this.button10.Font = new System.Drawing.Font("Courier New", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(155, 213);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(198, 101);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Big Mac";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnBigMac.BackColor = System.Drawing.Color.Violet;
+            this.btnBigMac.Font = new System.Drawing.Font("Courier New", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBigMac.Location = new System.Drawing.Point(155, 213);
+            this.btnBigMac.Name = "btnBigMac";
+            this.btnBigMac.Size = new System.Drawing.Size(198, 101);
+            this.btnBigMac.TabIndex = 0;
+            this.btnBigMac.Text = "Big Mac";
+            this.btnBigMac.UseVisualStyleBackColor = false;
+            this.btnBigMac.Click += new System.EventHandler(this.btnBigMac_Click);
             // 
             // pnlComplete
             // 
             this.pnlComplete.BackColor = System.Drawing.Color.Honeydew;
             this.pnlComplete.Controls.Add(this.label4);
-            this.pnlComplete.Location = new System.Drawing.Point(125, 80);
+            this.pnlComplete.Location = new System.Drawing.Point(138, 80);
             this.pnlComplete.Name = "pnlComplete";
-            this.pnlComplete.Size = new System.Drawing.Size(879, 409);
+            this.pnlComplete.Size = new System.Drawing.Size(866, 409);
             this.pnlComplete.TabIndex = 5;
             this.pnlComplete.Visible = false;
             // 
@@ -733,40 +840,13 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Thank you for your order! ";
             // 
-            // lblStack
+            // lblStackBun
             // 
-            this.lblStack.AutoSize = true;
-            this.lblStack.Location = new System.Drawing.Point(25, 31);
-            this.lblStack.Name = "lblStack";
-            this.lblStack.Size = new System.Drawing.Size(41, 17);
-            this.lblStack.TabIndex = 0;
-            this.lblStack.Text = "stack";
-            // 
-            // btnCheese2
-            // 
-            this.btnCheese2.BackColor = System.Drawing.Color.Gold;
-            this.btnCheese2.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheese2.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnCheese2.Location = new System.Drawing.Point(337, 144);
-            this.btnCheese2.Name = "btnCheese2";
-            this.btnCheese2.Size = new System.Drawing.Size(199, 72);
-            this.btnCheese2.TabIndex = 5;
-            this.btnCheese2.Text = "Cheddar";
-            this.btnCheese2.UseVisualStyleBackColor = false;
-            this.btnCheese2.Click += new System.EventHandler(this.btnCheese2_Click);
-            // 
-            // btnCheese1
-            // 
-            this.btnCheese1.BackColor = System.Drawing.Color.Gold;
-            this.btnCheese1.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheese1.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnCheese1.Location = new System.Drawing.Point(89, 147);
-            this.btnCheese1.Name = "btnCheese1";
-            this.btnCheese1.Size = new System.Drawing.Size(214, 72);
-            this.btnCheese1.TabIndex = 6;
-            this.btnCheese1.Text = "American";
-            this.btnCheese1.UseVisualStyleBackColor = false;
-            this.btnCheese1.Click += new System.EventHandler(this.btnCheese1_Click);
+            this.lblStackBun.AutoSize = true;
+            this.lblStackBun.Location = new System.Drawing.Point(18, 21);
+            this.lblStackBun.Name = "lblStackBun";
+            this.lblStackBun.Size = new System.Drawing.Size(0, 17);
+            this.lblStackBun.TabIndex = 1;
             // 
             // Ordering
             // 
@@ -774,20 +854,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.ClientSize = new System.Drawing.Size(1080, 585);
-            this.Controls.Add(this.pnlCheese);
-            this.Controls.Add(this.pnlBun);
             this.Controls.Add(this.pnlBuild);
-            this.Controls.Add(this.pnlComplete);
-            this.Controls.Add(this.pnlToppings);
-            this.Controls.Add(this.pnlSummary);
-            this.Controls.Add(this.pnlSauce);
             this.Controls.Add(this.pnlSpecialty);
             this.Controls.Add(this.pnlOrderType);
+            this.Controls.Add(this.pnlSummary);
+            this.Controls.Add(this.pnlComplete);
+            this.Controls.Add(this.pnlStack);
+            this.Controls.Add(this.pnlSauce);
+            this.Controls.Add(this.pnlToppings);
+            this.Controls.Add(this.pnlCheese);
+            this.Controls.Add(this.pnlBun);
             this.Controls.Add(this.pnlLocation);
             this.Controls.Add(this.pnlStart);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.pnlPrevNext);
-            this.Controls.Add(this.pnlStack);
             this.Name = "Ordering";
             this.Text = "Ordering";
             this.pnlStart.ResumeLayout(false);
@@ -850,10 +930,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlStack;
         private System.Windows.Forms.Panel pnlSauce;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnBBQ;
+        private System.Windows.Forms.Button btnMayo;
+        private System.Windows.Forms.Button btnKetsup;
+        private System.Windows.Forms.Button btnMustard;
         private System.Windows.Forms.Panel pnlCheese;
         private System.Windows.Forms.Button btnNoCheese;
         private System.Windows.Forms.Button btnCheese3;
@@ -864,21 +944,26 @@
         private System.Windows.Forms.Button btnWheatBun;
         private System.Windows.Forms.Panel pnlSpecialty;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnVeggieBurger;
+        private System.Windows.Forms.Button btnBigMac;
         private System.Windows.Forms.Panel pnlComplete;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnTomato;
+        private System.Windows.Forms.Button btnOnion;
+        private System.Windows.Forms.Button btnLettuce;
+        private System.Windows.Forms.Button btnPickles;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPotatoBun;
         private System.Windows.Forms.Label lblStack;
         private System.Windows.Forms.Button btnCheese1;
         private System.Windows.Forms.Button btnCheese2;
+        private System.Windows.Forms.Button btnAllDone;
+        private System.Windows.Forms.Label lblSummaryConfirm;
+        private System.Windows.Forms.Button btnStartOver;
+        private System.Windows.Forms.Button btnYesDone;
+        private System.Windows.Forms.Label lblStackBun;
     }
 }
 
