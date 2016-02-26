@@ -46,6 +46,7 @@
             this.btnSpecialty = new System.Windows.Forms.Button();
             this.btnBuild = new System.Windows.Forms.Button();
             this.pnlPrevNext = new System.Windows.Forms.Panel();
+            this.btnAllDone = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
@@ -65,6 +66,7 @@
             this.btnPickles = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlStack = new System.Windows.Forms.Panel();
+            this.lblStackBun = new System.Windows.Forms.Label();
             this.lblStack = new System.Windows.Forms.Label();
             this.pnlCheese = new System.Windows.Forms.Panel();
             this.btnCheese1 = new System.Windows.Forms.Button();
@@ -73,7 +75,6 @@
             this.btnNoCheese = new System.Windows.Forms.Button();
             this.btnCheese3 = new System.Windows.Forms.Button();
             this.pnlSauce = new System.Windows.Forms.Panel();
-            this.btnAllDone = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBBQ = new System.Windows.Forms.Button();
             this.btnMayo = new System.Windows.Forms.Button();
@@ -90,7 +91,6 @@
             this.btnBigMac = new System.Windows.Forms.Button();
             this.pnlComplete = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblStackBun = new System.Windows.Forms.Label();
             this.pnlStart.SuspendLayout();
             this.pnlLocation.SuspendLayout();
             this.pnlBuild.SuspendLayout();
@@ -302,6 +302,18 @@
             this.pnlPrevNext.Size = new System.Drawing.Size(754, 56);
             this.pnlPrevNext.TabIndex = 4;
             this.pnlPrevNext.Visible = false;
+            // 
+            // btnAllDone
+            // 
+            this.btnAllDone.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnAllDone.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllDone.Location = new System.Drawing.Point(323, 4);
+            this.btnAllDone.Name = "btnAllDone";
+            this.btnAllDone.Size = new System.Drawing.Size(192, 48);
+            this.btnAllDone.TabIndex = 5;
+            this.btnAllDone.Text = "All done!";
+            this.btnAllDone.UseVisualStyleBackColor = false;
+            this.btnAllDone.Click += new System.EventHandler(this.btnAllDone_Click);
             // 
             // btnNext
             // 
@@ -534,6 +546,14 @@
             this.pnlStack.Size = new System.Drawing.Size(120, 480);
             this.pnlStack.TabIndex = 6;
             // 
+            // lblStackBun
+            // 
+            this.lblStackBun.AutoSize = true;
+            this.lblStackBun.Location = new System.Drawing.Point(18, 21);
+            this.lblStackBun.Name = "lblStackBun";
+            this.lblStackBun.Size = new System.Drawing.Size(0, 17);
+            this.lblStackBun.TabIndex = 1;
+            // 
             // lblStack
             // 
             this.lblStack.AutoSize = true;
@@ -631,18 +651,6 @@
             this.pnlSauce.Size = new System.Drawing.Size(866, 413);
             this.pnlSauce.TabIndex = 7;
             this.pnlSauce.Visible = false;
-            // 
-            // btnAllDone
-            // 
-            this.btnAllDone.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnAllDone.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAllDone.Location = new System.Drawing.Point(323, 4);
-            this.btnAllDone.Name = "btnAllDone";
-            this.btnAllDone.Size = new System.Drawing.Size(192, 48);
-            this.btnAllDone.TabIndex = 5;
-            this.btnAllDone.Text = "All done!";
-            this.btnAllDone.UseVisualStyleBackColor = false;
-            this.btnAllDone.Click += new System.EventHandler(this.btnAllDone_Click);
             // 
             // label7
             // 
@@ -840,29 +848,21 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Thank you for your order! ";
             // 
-            // lblStackBun
-            // 
-            this.lblStackBun.AutoSize = true;
-            this.lblStackBun.Location = new System.Drawing.Point(18, 21);
-            this.lblStackBun.Name = "lblStackBun";
-            this.lblStackBun.Size = new System.Drawing.Size(0, 17);
-            this.lblStackBun.TabIndex = 1;
-            // 
             // Ordering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.ClientSize = new System.Drawing.Size(1080, 585);
+            this.Controls.Add(this.pnlCheese);
+            this.Controls.Add(this.pnlStack);
             this.Controls.Add(this.pnlBuild);
             this.Controls.Add(this.pnlSpecialty);
             this.Controls.Add(this.pnlOrderType);
             this.Controls.Add(this.pnlSummary);
             this.Controls.Add(this.pnlComplete);
-            this.Controls.Add(this.pnlStack);
             this.Controls.Add(this.pnlSauce);
             this.Controls.Add(this.pnlToppings);
-            this.Controls.Add(this.pnlCheese);
             this.Controls.Add(this.pnlBun);
             this.Controls.Add(this.pnlLocation);
             this.Controls.Add(this.pnlStart);
@@ -914,8 +914,6 @@
         private System.Windows.Forms.Label lblOrderType;
         private System.Windows.Forms.Button btnSpecialty;
         private System.Windows.Forms.Button btnBuild;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Button btnToppings;
         private System.Windows.Forms.Button btnCheese;
@@ -956,14 +954,16 @@
         private System.Windows.Forms.Button btnPickles;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPotatoBun;
-        private System.Windows.Forms.Label lblStack;
         private System.Windows.Forms.Button btnCheese1;
         private System.Windows.Forms.Button btnCheese2;
         private System.Windows.Forms.Button btnAllDone;
         private System.Windows.Forms.Label lblSummaryConfirm;
         private System.Windows.Forms.Button btnStartOver;
         private System.Windows.Forms.Button btnYesDone;
-        private System.Windows.Forms.Label lblStackBun;
+        public System.Windows.Forms.Label lblStack;
+        public System.Windows.Forms.Label lblStackBun;
+        public System.Windows.Forms.Button btnNext;
+        public System.Windows.Forms.Button btnPrev;
     }
 }
 

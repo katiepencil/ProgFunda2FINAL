@@ -18,7 +18,7 @@ namespace OrderingApp
 
         string orderStep; //this keeps track of what panel you're on
 
-        string[] optionsArray = new string[4];
+        public string[] optionsArray = new string[4];
         
         string bunType;
         string cheeseType;
@@ -140,6 +140,7 @@ namespace OrderingApp
             }
         }
         
+
         /* Switch for prev/next button   */
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -158,7 +159,6 @@ namespace OrderingApp
                 case "bun":
                     pnlBuild.Visible = true;
                     pnlBun.Visible = false;
-                    pnlNav.Visible = false;
                     break;
                 case "cheese":
                     pnlBun.Visible = true;
@@ -294,6 +294,7 @@ namespace OrderingApp
             pnlBuild.Visible = false;
         }
 
+      
         /* Controls for the starting the building  */
 
         private void btnBuild_Click(object sender, EventArgs e)
@@ -314,104 +315,143 @@ namespace OrderingApp
             pnlBun.Visible = true;
         }
 
+     
         //choose your bun!!//
 
         private void btnWheatBun_Click(object sender, EventArgs e)
-        {   lblStackBun.Text = "Wheat Bun\n";
+        {
             btnNext.Enabled = true;
+            string bunType = Bun.createBun("Wheat Bun");
+            lblStackBun.Text = bunType;
         }
         
         private void btnWhiteBun_Click(object sender, EventArgs e)
-        {   lblStackBun.Text = "White Bun\n";
+        {
             btnNext.Enabled = true;
+            string bunType = Bun.createBun("White Bun");
+            lblStackBun.Text = bunType;
         }
 
         private void btnPotatoBun_Click(object sender, EventArgs e)
-        {    lblStackBun.Text = "Potato Bun\n";
-             btnNext.Enabled = true;
+        {    
+            btnNext.Enabled = true;
+            string bunType = Bun.createBun("Potato Bun");
+            lblStackBun.Text = bunType;
         }
 
+        
         //choose your cheese!!//
 
         private void btnCheese1_Click(object sender, EventArgs e)
         {
-            optionsArray[1] = "American\n";
-            lblStack.Text += optionsArray[1];
-            
+            btnNext.Enabled = true;
+            string cheeseType = Cheese.createCheese("WOW American Cheese");
+            //optionsArray[1] = cheeseType + "\n";
+            //lblStack.Text += optionsArray[1];
+          
+           string displayOrder = Display.createDisplay(cheeseType, 1);
+           lblStack.Text += displayOrder;
         }
 
         private void btnCheese2_Click(object sender, EventArgs e)
         {
-            optionsArray[1] = "Cheddar\n";
+            btnNext.Enabled = true;
+            string cheeseType = Cheese.createCheese("Cheddar Cheese");
+            optionsArray[1] = cheeseType + "\n";
             lblStack.Text += optionsArray[1];
-            
         }
 
         private void btnCheese3_Click(object sender, EventArgs e)
         {
-            optionsArray[1] = "Swiss\n";
+            btnNext.Enabled = true;
+            string cheeseType = Cheese.createCheese("Swiss Cheese");
+            optionsArray[1] = cheeseType + "\n";
             lblStack.Text += optionsArray[1];
-            
         }
 
         private void btnNoCheese_Click(object sender, EventArgs e)
         {
-            optionsArray[1] = "No Cheese\n";
+            btnNext.Enabled = true;
+            string cheeseType = Cheese.createCheese("No Cheese");
+            optionsArray[1] = cheeseType + "\n";
             lblStack.Text += optionsArray[1];
         }
 
+       
         //choose your toppings!!//
 
         private void btnPickles_Click(object sender, EventArgs e)
         {
-            optionsArray[2] = "Pickles\n";
-            lblStack.Text += optionsArray[2];
+            btnNext.Enabled = true;
+            string toppingsType = Toppings.createTopping("WOW PICKLES!");
+            string displayOrder = Display.createDisplay(toppingsType, 2);
+            lblStack.Text += displayOrder;
+
+           // string toppingType = Toppings.createTopping("Pickles");
+            //optionsArray[2] = toppingType + "\n";
+            //lblStack.Text += optionsArray[2];
         }
 
         private void btnTomato_Click(object sender, EventArgs e)
         {
-            optionsArray[2] = "Tomato\n";
-            lblStack.Text += optionsArray[2];
+            btnNext.Enabled = true;
+            string toppingsType = Toppings.createTopping("WOW tomatoes!");
+            string displayOrder = Display.createDisplay(toppingsType, 2);
+            lblStack.Text += displayOrder;
+
+            //string toppingType = Toppings.createTopping("Tomatoes");
+            //optionsArray[2] = toppingType + "\n";
+            //lblStack.Text += optionsArray[2];
         }
 
         private void btnLettuce_Click(object sender, EventArgs e)
         {
-            optionsArray[2] = "Lettuce\n";
+            btnNext.Enabled = true;
+            string toppingType = Toppings.createTopping("Lettuce");
+            optionsArray[2] = toppingType + "\n";
             lblStack.Text += optionsArray[2];
         }
 
         private void btnOnion_Click(object sender, EventArgs e)
         {
-            optionsArray[2] = "Onion\n";
+            btnNext.Enabled = true;
+            string toppingType = Toppings.createTopping("Onion");
+            optionsArray[2] = toppingType + "\n";
             lblStack.Text += optionsArray[2];
         }
 
+       
         //choose your sauces!!//
 
         private void btnKetsup_Click(object sender, EventArgs e)
         {
-            optionsArray[3] = "Ketsup\n";
-            lblStack.Text += optionsArray[3];
+            string sauceType = Sauces.createSauces("Ketsup");
+            optionsArray[3] = sauceType + "\n";
+            lblStack.Text += optionsArray[3]; 
         }
 
         private void btnMayo_Click(object sender, EventArgs e)
         {
-            optionsArray[3] = "Mayo\n";
-            lblStack.Text += optionsArray[3];
+            string sauceType = Sauces.createSauces("Mayo");
+            optionsArray[3] = sauceType + "\n";
+            lblStack.Text += optionsArray[3]; 
         }
 
         private void btnMustard_Click(object sender, EventArgs e)
         {
-            optionsArray[3] = "Mustard\n";
-            lblStack.Text += optionsArray[3];
+            string sauceType = Sauces.createSauces("Mustard");
+            optionsArray[3] = sauceType + "\n";
+            lblStack.Text += optionsArray[3]; 
         }
 
         private void btnBBQ_Click(object sender, EventArgs e)
         {
-            optionsArray[3] = "BBQ\n";
-            lblStack.Text += optionsArray[3];
+            string sauceType = Sauces.createSauces("BBQ");
+            optionsArray[3] = sauceType + "\n";
+            lblStack.Text += optionsArray[3]; 
         }
 
+      
         //set the 'btnNext' button to enabled-true once it has been clicked!//
 
         private void btnAllDone_Click(object sender, EventArgs e)
@@ -472,5 +512,11 @@ namespace OrderingApp
         {
             lblStack.Text = "Veggie Burger\n"; 
         }
+
+        private void clickHandler(object sender)
+        {
+            lblStack.Text = sender.ToString();
         }
+        
+    }
     }
