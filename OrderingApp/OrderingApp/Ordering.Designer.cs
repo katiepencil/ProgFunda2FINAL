@@ -46,6 +46,8 @@
             this.btnSpecialty = new System.Windows.Forms.Button();
             this.btnBuild = new System.Windows.Forms.Button();
             this.pnlPrevNext = new System.Windows.Forms.Panel();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnBACK = new System.Windows.Forms.Button();
             this.btnAllDone = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
@@ -256,7 +258,6 @@
             this.pnlOrderType.Size = new System.Drawing.Size(860, 402);
             this.pnlOrderType.TabIndex = 3;
             this.pnlOrderType.Visible = false;
-            this.pnlOrderType.VisibleChanged += new System.EventHandler(this.pnlOrderType_VisibleChanged);
             // 
             // lblOrderType
             // 
@@ -299,9 +300,29 @@
             this.pnlPrevNext.Controls.Add(this.btnPrev);
             this.pnlPrevNext.Location = new System.Drawing.Point(138, 502);
             this.pnlPrevNext.Name = "pnlPrevNext";
-            this.pnlPrevNext.Size = new System.Drawing.Size(754, 56);
+            this.pnlPrevNext.Size = new System.Drawing.Size(860, 56);
             this.pnlPrevNext.TabIndex = 4;
             this.pnlPrevNext.Visible = false;
+            // 
+            // btnForward
+            // 
+            this.btnForward.BackColor = System.Drawing.Color.Linen;
+            this.btnForward.Location = new System.Drawing.Point(983, 507);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(77, 52);
+            this.btnForward.TabIndex = 7;
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            // 
+            // btnBACK
+            // 
+            this.btnBACK.BackColor = System.Drawing.Color.Linen;
+            this.btnBACK.Location = new System.Drawing.Point(12, 507);
+            this.btnBACK.Name = "btnBACK";
+            this.btnBACK.Size = new System.Drawing.Size(87, 52);
+            this.btnBACK.TabIndex = 6;
+            this.btnBACK.UseVisualStyleBackColor = false;
+            this.btnBACK.Click += new System.EventHandler(this.btnBACK_Click);
             // 
             // btnAllDone
             // 
@@ -311,31 +332,31 @@
             this.btnAllDone.Name = "btnAllDone";
             this.btnAllDone.Size = new System.Drawing.Size(192, 48);
             this.btnAllDone.TabIndex = 5;
-            this.btnAllDone.Text = "All done!";
+            this.btnAllDone.Text = "Complete!";
             this.btnAllDone.UseVisualStyleBackColor = false;
             this.btnAllDone.Click += new System.EventHandler(this.btnAllDone_Click);
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.LightPink;
-            this.btnNext.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(572, 3);
+            this.btnNext.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnNext.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(520, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(182, 50);
+            this.btnNext.Size = new System.Drawing.Size(326, 50);
             this.btnNext.TabIndex = 0;
-            this.btnNext.Text = "Next  >>>";
+            this.btnNext.Text = "Choose then click >>";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrev
             // 
-            this.btnPrev.BackColor = System.Drawing.Color.LightPink;
-            this.btnPrev.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.Location = new System.Drawing.Point(54, 3);
+            this.btnPrev.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnPrev.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.Location = new System.Drawing.Point(3, 3);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(204, 50);
+            this.btnPrev.Size = new System.Drawing.Size(314, 50);
             this.btnPrev.TabIndex = 1;
-            this.btnPrev.Text = "<<<   Back";
+            this.btnPrev.Text = "<< Choose then click";
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
@@ -727,7 +748,6 @@
             this.pnlBun.Size = new System.Drawing.Size(866, 407);
             this.pnlBun.TabIndex = 4;
             this.pnlBun.Visible = false;
-            this.pnlBun.VisibleChanged += new System.EventHandler(this.pnlBun_VisibleChanged);
             // 
             // btnPotatoBun
             // 
@@ -854,20 +874,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.ClientSize = new System.Drawing.Size(1080, 585);
-            this.Controls.Add(this.pnlCheese);
-            this.Controls.Add(this.pnlStack);
-            this.Controls.Add(this.pnlBuild);
-            this.Controls.Add(this.pnlSpecialty);
-            this.Controls.Add(this.pnlOrderType);
-            this.Controls.Add(this.pnlSummary);
-            this.Controls.Add(this.pnlComplete);
-            this.Controls.Add(this.pnlSauce);
-            this.Controls.Add(this.pnlToppings);
-            this.Controls.Add(this.pnlBun);
-            this.Controls.Add(this.pnlLocation);
-            this.Controls.Add(this.pnlStart);
-            this.Controls.Add(this.pnlNav);
+            this.Controls.Add(this.btnBACK);
+            this.Controls.Add(this.btnForward);
             this.Controls.Add(this.pnlPrevNext);
+            this.Controls.Add(this.pnlNav);
+            this.Controls.Add(this.pnlSummary);
+            this.Controls.Add(this.pnlStack);
+            this.Controls.Add(this.pnlLocation);
+            this.Controls.Add(this.pnlBun);
+            this.Controls.Add(this.pnlToppings);
+            this.Controls.Add(this.pnlSauce);
+            this.Controls.Add(this.pnlComplete);
+            this.Controls.Add(this.pnlOrderType);
+            this.Controls.Add(this.pnlSpecialty);
+            this.Controls.Add(this.pnlBuild);
+            this.Controls.Add(this.pnlCheese);
+            this.Controls.Add(this.pnlStart);
             this.Name = "Ordering";
             this.Text = "Ordering";
             this.pnlStart.ResumeLayout(false);
@@ -962,8 +984,10 @@
         private System.Windows.Forms.Button btnYesDone;
         public System.Windows.Forms.Label lblStack;
         public System.Windows.Forms.Label lblStackBun;
-        public System.Windows.Forms.Button btnNext;
-        public System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btnBACK;
+        private System.Windows.Forms.Button btnForward;
     }
 }
 

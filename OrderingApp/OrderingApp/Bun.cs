@@ -11,11 +11,12 @@ namespace OrderingApp
         static public string createBun(string _bunType)
         {
             var orderingApp = new Ordering();
-            orderingApp.btnNext.Enabled = true;
-            //orderingApp.lblStackBun.Text = _bunType;
-            orderingApp.btnPrev.Enabled = true;
             var bunType = _bunType;
             return bunType;
+            
+            //orderingApp.btnNext.Enabled = true;
+            //orderingApp.lblStackBun.Text = _bunType;
+           // orderingApp.btnPrev.Enabled = true;
         }
     }
 }

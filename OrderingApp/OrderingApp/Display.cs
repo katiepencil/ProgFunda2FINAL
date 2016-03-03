@@ -10,7 +10,7 @@ namespace OrderingApp
         static public string createDisplay(string ingredient, int i)
         {
           var orderingApp = new Ordering();
-          string displayOrder = orderingApp.optionsArray[i] = ingredient + "\n(Using method!)\n";
+          string displayOrder = orderingApp.optionsArray[i] = ingredient + "\n";
           return displayOrder;
             
         }
