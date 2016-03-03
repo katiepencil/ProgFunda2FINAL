@@ -46,11 +46,11 @@
             this.btnSpecialty = new System.Windows.Forms.Button();
             this.btnBuild = new System.Windows.Forms.Button();
             this.pnlPrevNext = new System.Windows.Forms.Panel();
-            this.btnForward = new System.Windows.Forms.Button();
-            this.btnBACK = new System.Windows.Forms.Button();
             this.btnAllDone = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnBACK = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnToppings = new System.Windows.Forms.Button();
             this.btnCheese = new System.Windows.Forms.Button();
@@ -69,7 +69,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlStack = new System.Windows.Forms.Panel();
             this.lblStackBun = new System.Windows.Forms.Label();
-            this.lblStack = new System.Windows.Forms.Label();
             this.pnlCheese = new System.Windows.Forms.Panel();
             this.btnCheese1 = new System.Windows.Forms.Button();
             this.btnCheese2 = new System.Windows.Forms.Button();
@@ -93,6 +92,9 @@
             this.btnBigMac = new System.Windows.Forms.Button();
             this.pnlComplete = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnArrayDisplay = new System.Windows.Forms.Button();
+            this.lblArrayDisplay = new System.Windows.Forms.Label();
+            this.lblStack = new System.Windows.Forms.Label();
             this.pnlStart.SuspendLayout();
             this.pnlLocation.SuspendLayout();
             this.pnlBuild.SuspendLayout();
@@ -304,26 +306,6 @@
             this.pnlPrevNext.TabIndex = 4;
             this.pnlPrevNext.Visible = false;
             // 
-            // btnForward
-            // 
-            this.btnForward.BackColor = System.Drawing.Color.Linen;
-            this.btnForward.Location = new System.Drawing.Point(983, 507);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(77, 52);
-            this.btnForward.TabIndex = 7;
-            this.btnForward.UseVisualStyleBackColor = false;
-            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
-            // 
-            // btnBACK
-            // 
-            this.btnBACK.BackColor = System.Drawing.Color.Linen;
-            this.btnBACK.Location = new System.Drawing.Point(12, 507);
-            this.btnBACK.Name = "btnBACK";
-            this.btnBACK.Size = new System.Drawing.Size(87, 52);
-            this.btnBACK.TabIndex = 6;
-            this.btnBACK.UseVisualStyleBackColor = false;
-            this.btnBACK.Click += new System.EventHandler(this.btnBACK_Click);
-            // 
             // btnAllDone
             // 
             this.btnAllDone.BackColor = System.Drawing.Color.OrangeRed;
@@ -359,6 +341,26 @@
             this.btnPrev.Text = "<< Choose then click";
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnForward
+            // 
+            this.btnForward.BackColor = System.Drawing.Color.Linen;
+            this.btnForward.Location = new System.Drawing.Point(983, 507);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(77, 52);
+            this.btnForward.TabIndex = 7;
+            this.btnForward.UseVisualStyleBackColor = false;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
+            // 
+            // btnBACK
+            // 
+            this.btnBACK.BackColor = System.Drawing.Color.Linen;
+            this.btnBACK.Location = new System.Drawing.Point(12, 507);
+            this.btnBACK.Name = "btnBACK";
+            this.btnBACK.Size = new System.Drawing.Size(87, 52);
+            this.btnBACK.TabIndex = 6;
+            this.btnBACK.UseVisualStyleBackColor = false;
+            this.btnBACK.Click += new System.EventHandler(this.btnBACK_Click);
             // 
             // pnlNav
             // 
@@ -428,6 +430,7 @@
             // pnlSummary
             // 
             this.pnlSummary.BackColor = System.Drawing.Color.LightCoral;
+            this.pnlSummary.Controls.Add(this.lblStack);
             this.pnlSummary.Controls.Add(this.lblSummaryConfirm);
             this.pnlSummary.Controls.Add(this.btnStartOver);
             this.pnlSummary.Controls.Add(this.btnYesDone);
@@ -560,8 +563,9 @@
             // pnlStack
             // 
             this.pnlStack.BackColor = System.Drawing.Color.Tomato;
+            this.pnlStack.Controls.Add(this.lblArrayDisplay);
+            this.pnlStack.Controls.Add(this.btnArrayDisplay);
             this.pnlStack.Controls.Add(this.lblStackBun);
-            this.pnlStack.Controls.Add(this.lblStack);
             this.pnlStack.Location = new System.Drawing.Point(12, 12);
             this.pnlStack.Name = "pnlStack";
             this.pnlStack.Size = new System.Drawing.Size(120, 480);
@@ -570,18 +574,11 @@
             // lblStackBun
             // 
             this.lblStackBun.AutoSize = true;
-            this.lblStackBun.Location = new System.Drawing.Point(18, 21);
+            this.lblStackBun.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStackBun.Location = new System.Drawing.Point(18, 19);
             this.lblStackBun.Name = "lblStackBun";
             this.lblStackBun.Size = new System.Drawing.Size(0, 17);
             this.lblStackBun.TabIndex = 1;
-            // 
-            // lblStack
-            // 
-            this.lblStack.AutoSize = true;
-            this.lblStack.Location = new System.Drawing.Point(24, 61);
-            this.lblStack.Name = "lblStack";
-            this.lblStack.Size = new System.Drawing.Size(0, 17);
-            this.lblStack.TabIndex = 0;
             // 
             // pnlCheese
             // 
@@ -868,6 +865,34 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Thank you for your order! ";
             // 
+            // btnArrayDisplay
+            // 
+            this.btnArrayDisplay.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnArrayDisplay.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArrayDisplay.Location = new System.Drawing.Point(10, 357);
+            this.btnArrayDisplay.Name = "btnArrayDisplay";
+            this.btnArrayDisplay.Size = new System.Drawing.Size(105, 110);
+            this.btnArrayDisplay.TabIndex = 2;
+            this.btnArrayDisplay.Text = "Click to refresh! Go ahead and add more!";
+            this.btnArrayDisplay.UseVisualStyleBackColor = false;
+            this.btnArrayDisplay.Click += new System.EventHandler(this.btnArrayDisplay_Click);
+            // 
+            // lblArrayDisplay
+            // 
+            this.lblArrayDisplay.AutoSize = true;
+            this.lblArrayDisplay.Location = new System.Drawing.Point(18, 54);
+            this.lblArrayDisplay.Name = "lblArrayDisplay";
+            this.lblArrayDisplay.Size = new System.Drawing.Size(0, 17);
+            this.lblArrayDisplay.TabIndex = 4;
+            // 
+            // lblStack
+            // 
+            this.lblStack.AutoSize = true;
+            this.lblStack.Location = new System.Drawing.Point(56, 47);
+            this.lblStack.Name = "lblStack";
+            this.lblStack.Size = new System.Drawing.Size(0, 17);
+            this.lblStack.TabIndex = 4;
+            // 
             // Ordering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -982,12 +1007,14 @@
         private System.Windows.Forms.Label lblSummaryConfirm;
         private System.Windows.Forms.Button btnStartOver;
         private System.Windows.Forms.Button btnYesDone;
-        public System.Windows.Forms.Label lblStack;
         public System.Windows.Forms.Label lblStackBun;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnBACK;
         private System.Windows.Forms.Button btnForward;
+        private System.Windows.Forms.Label lblArrayDisplay;
+        private System.Windows.Forms.Button btnArrayDisplay;
+        private System.Windows.Forms.Label lblStack;
     }
 }
 

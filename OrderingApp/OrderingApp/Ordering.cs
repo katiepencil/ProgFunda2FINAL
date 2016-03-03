@@ -15,6 +15,22 @@ namespace OrderingApp
         string takeOut;
         bool standardBurger;
 
+        //these strings are for the segregated display on the left panel.
+        //I added this at the last minute so I could divide
+        //the display by the ingredient type, regardless
+        //order used when placing the order
+        /* this is what I would use if I was going to show pictures, because 
+         * you have to be able to show sauces together, etc
+         * regardless of what order the customer decided on them in.
+         * I haven't gone thru and removed the old 'lblStack' code.
+         * so it's jjust on the closing page (as a second display of
+         * 'what you ordered'. I realized I couldn't remove it from the display before
+         * removing all the code tied to it!*/
+
+        string allChosenToppings;
+        string allChosenSauces;
+        string allChosenCheeses;
+
         string orderStep; //this keeps track of what panel you're on
 
         public string[] optionsArray = new string[4];
@@ -27,7 +43,9 @@ namespace OrderingApp
             InitializeComponent();
         }
 
-        /* Load  events  */
+        /* Load  events  
+         these are all the pages and their status when the program
+         first opens */
 
         private void Ordering_Load(object sender, EventArgs e)
         {
@@ -55,9 +73,18 @@ namespace OrderingApp
             lblStack.Text = "  ";
         }
 
-        /* Button click events  */
-        //this is how we 'flip' the visibility of the first two panels
-            //shut one off, turn the other on!
+        /* Button click events  
+         * this is how we 'flip' the visibility
+         * of panels. Shut one off, 
+         * and at the same time turn the other on
+         * I also used this to control when that DARN prevNext panel 
+         and buttons would appear. Lots of trouble with that.
+         I finally ended up just doing simple controls-- 
+         now you have to click on at least one ingredient on a page before the 
+         prevNext will work. Couldn't get the pageVisible controls to work, 
+         * not sure why. 
+         * And I dont' have the graying-out
+         feature. Tho that would look nicer. */
 
         private void btnStart_Click(object sender, EventArgs e)    
         {   pnlStart.Visible = false;
@@ -83,14 +110,14 @@ namespace OrderingApp
         }
 
         /* Panel Visible changed events 
-         * These are not working for me, so I commented them out for now */
-
+         * As I mentioned, these are not working for me, 
+         * and I couldn't figure out why.
+         * So I commented them out for now and just did very basic controls. */
 
         //public void pnlLocation_VisibleChanged(object sender, EventArgs e)
         //{
         //    if (pnlLocation.Visible)
-        //    {
-        //        pnlNav.Visible = false;
+        //    { pnlNav.Visible = false;
         //        pnlPrevNext.Visible = false;
         //        //btnPrev.Enabled = true;
         //        //btnNext.Enabled = true;
@@ -100,8 +127,7 @@ namespace OrderingApp
         //public void pnlOrderType_VisibleChanged(object sender, EventArgs e)
         //{
         //    if (pnlOrderType.Visible)
-        //    {
-        //        orderStep = "order Type";
+        //    {orderStep = "order Type";
         //        pnlNav.Visible = true;
         //        pnlPrevNext.Visible = false;
         //        //btnPrev.Enabled = true;
@@ -161,11 +187,19 @@ namespace OrderingApp
         //      //btnNext.Enabled = true;
         //    }
         //}
-        
-
-        /* Switch for prev/next button  
-         * these are so I can monitor what 'orderStep' is.
-         I'm troubleshooting to see why it was not reading the right orderStep labels*/
+       
+        /* DIAGNOSTIC: Switch for prev/next button  
+         * These are so I can monitor what 'orderStep' is at 
+         * any moment. They are the un-colored buttons 
+         * next to the colored Prev and Next buttons.
+         I'm troubleshooting to see why I was not reading the right orderStep labels.
+         This was VERY helpful. I was able to figure out that my switch was working,
+         * at least! So then I 'forced' it to take the orderStep
+         * labels (by linking them to button clicks when choosing ingredients)
+         * and then the DARN prevNext started working.
+         * 
+         * I left the buttons there, if you want to 
+         check them out! Just some extra fun.*/
 
         private void btnBACK_Click(object sender, EventArgs e)
         {
@@ -179,6 +213,16 @@ namespace OrderingApp
             btnForward.Text = orderStep;
         }
 
+        /* SWITCH: almost perfect! The prevNext buttons get screwy
+         * if you keep going backward from the ingredient pages.
+         * But at the other end, after the ingredients, I made
+         * them just circle back into more ingredients.
+         * Buy more! Eat more! Then when you're done, hit
+         * the 'done' button.
+         * I would finish this by making the 'build' case options 
+         * different somehow. Have to think it thru.
+         */
+       
         private void btnPrev_Click(object sender, EventArgs e)
         {
           switch (orderStep)
@@ -238,13 +282,17 @@ namespace OrderingApp
         }
 
 
-        /* Controls for the top nav buttons   */
+        /* Controls for the top nav buttons   
+         There may be a prettier way to do this, but it worked
+         simply enough.
+         I also used this to force the orderStep,
+         so if you don't choose an ingredient but jump to another
+         category, it sets the right orderStep.*/
 
         private void btnBun_Click(object sender, EventArgs e)
         {
             pnlNav.Visible = true;
             pnlPrevNext.Visible = true;
-
             pnlBun.Visible = true;
             pnlCheese.Visible = false;
             pnlToppings.Visible = false;
@@ -256,12 +304,10 @@ namespace OrderingApp
         {
             pnlNav.Visible = true;
             pnlPrevNext.Visible = true;
-           
             pnlBun.Visible = false;
             pnlCheese.Visible = true;
             pnlToppings.Visible = false;
             pnlSauce.Visible = false;
-
             orderStep = "cheese";
         }
 
@@ -269,12 +315,10 @@ namespace OrderingApp
         {
             pnlNav.Visible = true;
             pnlPrevNext.Visible = true;
-
             pnlBun.Visible = false;
             pnlCheese.Visible = false;
             pnlToppings.Visible = true;
             pnlSauce.Visible = false;
-
             orderStep = "toppings";
         }
 
@@ -282,17 +326,22 @@ namespace OrderingApp
         {
             pnlNav.Visible = true;
             pnlPrevNext.Visible = true;
-
             pnlBun.Visible = false;
             pnlCheese.Visible = false;
             pnlToppings.Visible = false;
             pnlSauce.Visible = true;
-
             orderStep = "sauce";
         }
 
       
-        /* Controls for the starting the building  */
+        /* Controls for starting building the hamburger.
+         * I decided not to show the prevNext controls until you 
+         have committed to building a custom burger. 
+         otherwise, you have to deal with that big
+         branch point.
+         Note that I also am forcing the orderStep labels
+         * with all of these clicks.
+         Couldn't figure out anything simpler.*/
 
         private void btnBuild_Click(object sender, EventArgs e)
         {
@@ -300,7 +349,6 @@ namespace OrderingApp
             pnlBuild.Visible = true;
             standardBurger = true;
             pnlPrevNext.Visible = true;
-
             orderStep = "build";
         }
             
@@ -317,12 +365,17 @@ namespace OrderingApp
             pnlBun.Visible = true;
             pnlNav.Visible = true;
             pnlPrevNext.Visible = true;
-
             orderStep = "bun";
         }
 
      
-        //choose your bun!!//
+        //choose your bun!!
+        
+        /* Now we start choosing some ingredients!
+         * I set it up so you can only choose one bun
+         * (it gets its own label, and only one option
+         * allowed there). Every other ingredient can be piled up.
+         */
 
         private void btnWheatBun_Click(object sender, EventArgs e)
         {
@@ -347,14 +400,27 @@ namespace OrderingApp
 
         
         //choose your cheese!!//
+        /* Choose as many cheese as you want!
+         * I did not work on making it erase other 
+         * cheeses if you chose 'no cheese'. So for now you
+         * can choose 'no cheese' plus other cheeses. I would
+         * have to think this thru.
+         * This is where I start using the 'allChosenXXX' strings
+         * as a repository for all the ingredients chosen in that category.
+         * They can be printed out (on left panel) as segregated
+         * items.
+         * I'm still wrapping my head around the creatCheese and 
+         * createDisplay methods, so some of the buttons use them
+         * and some done't.
+         */
 
         private void btnCheese1_Click(object sender, EventArgs e)
         {
            string cheeseType = Cheese.createCheese("American Cheese");
            string displayOrder = Display.createDisplay(cheeseType, 1);
            lblStack.Text += displayOrder;
-            //optionsArray[1] = cheeseType + "\n";
-            //lblStack.Text += optionsArray[1];
+            optionsArray[1] = cheeseType + "\n";
+           allChosenCheeses += optionsArray[1];
            orderStep = "cheese";
         }
 
@@ -363,6 +429,7 @@ namespace OrderingApp
             string cheeseType = Cheese.createCheese("Cheddar Cheese");
             optionsArray[1] = cheeseType + "\n";
             lblStack.Text += optionsArray[1];
+            allChosenCheeses += optionsArray[1];
             orderStep = "cheese";
         }
 
@@ -371,6 +438,7 @@ namespace OrderingApp
             string cheeseType = Cheese.createCheese("Swiss Cheese");
             optionsArray[1] = cheeseType + "\n";
             lblStack.Text += optionsArray[1];
+            allChosenCheeses += optionsArray[1];
             orderStep = "cheese";
         }
 
@@ -379,20 +447,25 @@ namespace OrderingApp
             string cheeseType = Cheese.createCheese("No Cheese");
             optionsArray[1] = cheeseType + "\n";
             lblStack.Text += optionsArray[1];
+            allChosenCheeses += optionsArray[1];
             orderStep = "cheese";
         }
 
        
-        //choose your toppings!!//
+        //choose your toppings!!
+        //As discussed, I added code to use the arrays to segregate the 
+        //ingredients by array position. 
+        //I'm sure there's a way to put that into the display
+        //method but this is a start.
 
         private void btnPickles_Click(object sender, EventArgs e)
         {
             string toppingsType = Toppings.createTopping("Pickles");
             string displayOrder = Display.createDisplay(toppingsType, 2);
             lblStack.Text += displayOrder;
+            optionsArray[2] = toppingsType + "\n";
+            allChosenToppings += optionsArray[2]; 
             orderStep = "toppings";
-            //optionsArray[2] = toppingType + "\n";
-            //lblStack.Text += optionsArray[2];
         }
 
         private void btnTomato_Click(object sender, EventArgs e)
@@ -400,16 +473,17 @@ namespace OrderingApp
             string toppingsType = Toppings.createTopping("Tomatoes");
             string displayOrder = Display.createDisplay(toppingsType, 2);
             lblStack.Text += displayOrder;
+            optionsArray[2] = toppingsType + "\n";
+            allChosenToppings += optionsArray[2];
             orderStep = "toppings";
-            //string toppingType = Toppings.createTopping("Tomatoes");
-            //optionsArray[2] = toppingType + "\n";
-            //lblStack.Text += optionsArray[2]; 
         }
 
         private void btnLettuce_Click(object sender, EventArgs e)
         {
             string toppingType = Toppings.createTopping("Lettuce");
             optionsArray[2] = toppingType + "\n";
+            allChosenToppings += optionsArray[2];
+            //this still is using the old way of making the display.
             lblStack.Text += optionsArray[2];
             orderStep = "toppings";
         }
@@ -419,6 +493,7 @@ namespace OrderingApp
             string toppingType = Toppings.createTopping("Onion");
             optionsArray[2] = toppingType + "\n";
             lblStack.Text += optionsArray[2];
+            allChosenToppings += optionsArray[2];
             orderStep = "toppings";
         }
 
@@ -430,6 +505,7 @@ namespace OrderingApp
             string sauceType = Sauces.createSauces("Ketchup");
             optionsArray[3] = sauceType + "\n";
             lblStack.Text += optionsArray[3];
+            allChosenSauces += optionsArray[3];
             orderStep = "sauce";
         }
 
@@ -438,6 +514,7 @@ namespace OrderingApp
             string sauceType = Sauces.createSauces("Mayo");
             optionsArray[3] = sauceType + "\n";
             lblStack.Text += optionsArray[3];
+            allChosenSauces += optionsArray[3];
             orderStep = "sauce";
         }
 
@@ -446,6 +523,7 @@ namespace OrderingApp
             string sauceType = Sauces.createSauces("Mustard");
             optionsArray[3] = sauceType + "\n";
             lblStack.Text += optionsArray[3];
+            allChosenSauces += optionsArray[3];
             orderStep = "sauce";
         }
 
@@ -454,6 +532,7 @@ namespace OrderingApp
             string sauceType = Sauces.createSauces("BBQ");
             optionsArray[3] = sauceType + "\n";
             lblStack.Text += optionsArray[3];
+            allChosenSauces += optionsArray[3];
             orderStep = "sauce";
         }
 
@@ -523,6 +602,11 @@ namespace OrderingApp
         private void clickHandler(object sender)
         {
             lblStack.Text = sender.ToString();
+        }
+
+        private void btnArrayDisplay_Click(object sender, EventArgs e)
+        {
+            lblArrayDisplay.Text = "Cheese: \n" + allChosenCheeses + "\nTopping: \n" + allChosenToppings + "\nSauce: \n" + allChosenSauces;
         }
 
      
