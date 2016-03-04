@@ -15,28 +15,16 @@ namespace OrderingApp
         string takeOut;
         bool standardBurger;
 
-        //these strings are for the segregated display on the left panel.
-        //I added this at the last minute so I could divide
-        //the display by the ingredient type, regardless
-        //order used when placing the order
-        /* this is what I would use if I was going to show pictures, because 
-         * you have to be able to show sauces together, etc
-         * regardless of what order the customer decided on them in.
-         * I haven't gone thru and removed the old 'lblStack' code.
-         * so it's jjust on the closing page (as a second display of
-         * 'what you ordered'. I realized I couldn't remove it from the display before
-         * removing all the code tied to it!*/
-
-        string allChosenToppings;
-        string allChosenSauces;
-        string allChosenCheeses;
+        public string allChosenToppings = " ";
+        public string allChosenSauces = " ";
+        public string allChosenCheeses = " ";
 
         string orderStep; //this keeps track of what panel you're on
 
         public string[] optionsArray = new string[4];
-        
-        string[] toppings = new string[]{};
-        string[] sauce = new string[]{};
+
+        string[] toppings = new string[] { };
+        string[] sauce = new string[] { };
 
         public Ordering()
         {
@@ -53,17 +41,17 @@ namespace OrderingApp
             pnlStack.Visible = true;
             pnlNav.Visible = false;
             pnlPrevNext.Visible = false;
-            
+
             pnlLocation.Visible = false;
             pnlOrderType.Visible = false;
-            
+
             pnlBuild.Visible = false;
             pnlBun.Visible = false;
             pnlCheese.Visible = false;
             pnlToppings.Visible = false;
             pnlSauce.Visible = false;
 
-            pnlSpecialty.Visible = false;         
+            pnlSpecialty.Visible = false;
             pnlSummary.Visible = false;
             pnlComplete.Visible = false;
 
@@ -71,182 +59,158 @@ namespace OrderingApp
             btnNext.Enabled = true;
 
             lblStack.Text = "  ";
+            lblStackBun.Text = "  ";
         }
 
         /* Button click events  
          * this is how we 'flip' the visibility
          * of panels. Shut one off, 
          * and at the same time turn the other on
-         * I also used this to control when that DARN prevNext panel 
-         and buttons would appear. Lots of trouble with that.
-         I finally ended up just doing simple controls-- 
-         now you have to click on at least one ingredient on a page before the 
-         prevNext will work. Couldn't get the pageVisible controls to work, 
-         * not sure why. 
-         * And I dont' have the graying-out
-         feature. Tho that would look nicer. */
+          */
 
-        private void btnStart_Click(object sender, EventArgs e)    
-        {   pnlStart.Visible = false;
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            pnlStart.Visible = false;
             pnlLocation.Visible = true;
             pnlNav.Visible = false;
-            pnlPrevNext.Visible = false;
+            pnlPrevNext.Visible = true;
         }
 
         private void btnIn_Click(object sender, EventArgs e)
-        {   takeOut = "to eat inside";
+        {
+            takeOut = "to eat inside";
             pnlLocation.Visible = false;
             pnlOrderType.Visible = true;
             pnlNav.Visible = false;
-            pnlPrevNext.Visible = false;
+            pnlPrevNext.Visible = true;
         }
 
         private void btnOut_Click(object sender, EventArgs e)
-        {   takeOut = "to eat outside";
+        {
+            takeOut = "to eat outside";
             pnlLocation.Visible = false;
             pnlOrderType.Visible = true;
             pnlNav.Visible = false;
-            pnlPrevNext.Visible = false;
+            pnlPrevNext.Visible = true;
         }
 
         /* Panel Visible changed events 
-         * As I mentioned, these are not working for me, 
-         * and I couldn't figure out why.
-         * So I commented them out for now and just did very basic controls. */
+          */
 
-        //public void pnlLocation_VisibleChanged(object sender, EventArgs e)
-        //{
-        //    if (pnlLocation.Visible)
-        //    { pnlNav.Visible = false;
-        //        pnlPrevNext.Visible = false;
-        //        //btnPrev.Enabled = true;
-        //        //btnNext.Enabled = true;
-        //    }
-        //}
-
-        //public void pnlOrderType_VisibleChanged(object sender, EventArgs e)
-        //{
-        //    if (pnlOrderType.Visible)
-        //    {orderStep = "order Type";
-        //        pnlNav.Visible = true;
-        //        pnlPrevNext.Visible = false;
-        //        //btnPrev.Enabled = true;
-        //        //btnNext.Enabled = true;
-        //    }
-        //}
-
-        //public void pnlBuild_VisibleChanged(object sender, EventArgs e)
-        //{if (pnlBuild.Visible)
-        //    {
-        //    orderStep = "build";
-        //    pnlNav.Visible = false;
-        //    pnlPrevNext.Visible = true;
-        //    //btnPrev.Enabled = true;
-        //    //btnNext.Enabled = true;
-        //    }
-        //}
-
-        //private void pnlBun_VisibleChanged(object sender, EventArgs e)
-        //{if (pnlBun.Visible)
-        //    {
-        //    orderStep = "bun";
-        //    pnlNav.Visible = true;
-        //    pnlPrevNext.Visible = true;
-        //    //btnPrev.Enabled = false;
-        //    //btnNext.Enabled = true;
-        //    }   
-        //}
-
-        //private void pnlCheese_VisibleChanged(object sender, EventArgs e)
-        //{ if (pnlCheese.Visible)
-        //    {
-        //    orderStep = "cheese";
-        //    pnlNav.Visible = true;
-        //    pnlPrevNext.Visible = true;
-        //    //btnPrev.Enabled = true;
-        //    //btnNext.Enabled = true;
-        //    }
-        //}
-        //private void pnlToppings_VisibleChanged(object sender, EventArgs e)
-        //{ if (pnlToppings.Visible)
-        //    {
-        //    orderStep = "toppings";
-        //    pnlNav.Visible = true;
-        //    pnlPrevNext.Visible = true;
-        //    //btnPrev.Enabled = true;
-        //    //btnNext.Enabled = true;
-        //    }
-        //}
-        //private void pnlSauce_VisibleChanged(object sender, EventArgs e)
-        //{ if (pnlSauce.Visible)
-        //    {
-        //    orderStep = "sauce";
-        //      pnlNav.Visible = true;
-        //      pnlPrevNext.Visible = true;
-        //      //btnPrev.Enabled = true;
-        //      //btnNext.Enabled = true;
-        //    }
-        //}
-       
-        /* DIAGNOSTIC: Switch for prev/next button  
-         * These are so I can monitor what 'orderStep' is at 
-         * any moment. They are the un-colored buttons 
-         * next to the colored Prev and Next buttons.
-         I'm troubleshooting to see why I was not reading the right orderStep labels.
-         This was VERY helpful. I was able to figure out that my switch was working,
-         * at least! So then I 'forced' it to take the orderStep
-         * labels (by linking them to button clicks when choosing ingredients)
-         * and then the DARN prevNext started working.
-         * 
-         * I left the buttons there, if you want to 
-         check them out! Just some extra fun.*/
-
-        private void btnBACK_Click(object sender, EventArgs e)
+        public void pnlLocation_VisibleChanged(object sender, EventArgs e)
         {
-            btnBACK.Text = orderStep;
-            btnForward.Text = "  --  ";
+            if (pnlLocation.Visible)
+            {
+                pnlNav.Visible = false;
+                pnlPrevNext.Visible = true;
+                btnPrev.Enabled = false;
+                btnNext.Enabled = true;
+                orderStep = "location";
+            }
         }
 
-        private void btnForward_Click(object sender, EventArgs e)
+        public void pnlOrderType_VisibleChanged(object sender, EventArgs e)
         {
-            btnBACK.Text = " ... ";
-            btnForward.Text = orderStep;
+            if (pnlOrderType.Visible)
+            {
+                orderStep = "order type";
+                pnlNav.Visible = false;
+                pnlPrevNext.Visible = true;
+                btnPrev.Enabled = true;
+                btnNext.Enabled = true;
+            }
         }
 
-        /* SWITCH: almost perfect! The prevNext buttons get screwy
-         * if you keep going backward from the ingredient pages.
-         * But at the other end, after the ingredients, I made
-         * them just circle back into more ingredients.
-         * Buy more! Eat more! Then when you're done, hit
-         * the 'done' button.
-         * I would finish this by making the 'build' case options 
-         * different somehow. Have to think it thru.
+        public void pnlBuild_VisibleChanged(object sender, EventArgs e)
+        {
+            if (pnlBuild.Visible)
+            {
+                orderStep = "build";
+                pnlNav.Visible = false;
+                pnlPrevNext.Visible = true;
+                btnPrev.Enabled = true;
+                btnNext.Enabled = true;
+            }
+        }
+
+        private void pnlBun_VisibleChanged(object sender, EventArgs e)
+        {
+            if (pnlBun.Visible)
+            {
+                orderStep = "bun";
+                pnlNav.Visible = true;
+                pnlPrevNext.Visible = true;
+                btnPrev.Enabled = true;
+                btnNext.Enabled = true;
+            }
+        }
+
+        private void pnlCheese_VisibleChanged(object sender, EventArgs e)
+        {
+            if (pnlCheese.Visible)
+            {
+                orderStep = "cheese";
+                pnlNav.Visible = true;
+                pnlPrevNext.Visible = true;
+                btnPrev.Enabled = true;
+                btnNext.Enabled = true;
+            }
+        }
+        private void pnlToppings_VisibleChanged(object sender, EventArgs e)
+        {
+            if (pnlToppings.Visible)
+            {
+                orderStep = "toppings";
+                pnlNav.Visible = true;
+                pnlPrevNext.Visible = true;
+                btnPrev.Enabled = true;
+                btnNext.Enabled = true;
+            }
+        }
+        private void pnlSauce_VisibleChanged(object sender, EventArgs e)
+        {
+            if (pnlSauce.Visible)
+            {
+                orderStep = "sauce";
+                pnlNav.Visible = true;
+                pnlPrevNext.Visible = true;
+                btnPrev.Enabled = true;
+                btnNext.Enabled = false;
+            }
+        }
+
+
+        /* SWITCH code is here.
          */
-       
+
         private void btnPrev_Click(object sender, EventArgs e)
         {
-          switch (orderStep)
+            switch (orderStep)
             {
-                case "build":   
-                   pnlBuild.Visible = false;
-                   pnlOrderType.Visible = true;
-                   break;
+                case "order type":
+                    pnlOrderType.Visible = false;
+                    pnlLocation.Visible = true;
+                    break;
+                case "build":
+                    pnlBuild.Visible = false;
+                    pnlOrderType.Visible = true;
+                    break;
                 case "bun":
-                   pnlBun.Visible = false;
-                   pnlBuild.Visible = true;
-                   break;
+                    pnlBun.Visible = false;
+                    pnlBuild.Visible = true;
+                    break;
                 case "cheese":
-                   pnlCheese.Visible = false;
-                   pnlBun.Visible = false;
-                   break;
+                    pnlCheese.Visible = false;
+                    pnlBun.Visible = true;
+                    break;
                 case "toppings":
-                   pnlToppings.Visible = false;
-                   pnlCheese.Visible = true;
+                    pnlToppings.Visible = false;
+                    pnlCheese.Visible = true;
                     break;
                 case "sauce":
-                   pnlSauce.Visible = false;
-                   pnlToppings.Visible = true;
-                   break;
+                    pnlSauce.Visible = false;
+                    pnlToppings.Visible = true;
+                    break;
                 default:
                     break;
             }
@@ -256,6 +220,14 @@ namespace OrderingApp
         {
             switch (orderStep)
             {
+                case "location":
+                    pnlLocation.Visible = false;
+                    pnlOrderType.Visible = true;
+                    break;
+                case "order type":
+                    pnlOrderType.Visible = false;
+                    pnlBuild.Visible = true;
+                    break;
                 case "build":
                     pnlBuild.Visible = false;
                     pnlBun.Visible = true;
@@ -281,13 +253,9 @@ namespace OrderingApp
             }
         }
 
-
         /* Controls for the top nav buttons   
          There may be a prettier way to do this, but it worked
-         simply enough.
-         I also used this to force the orderStep,
-         so if you don't choose an ingredient but jump to another
-         category, it sets the right orderStep.*/
+         simply enough.*/
 
         private void btnBun_Click(object sender, EventArgs e)
         {
@@ -297,7 +265,6 @@ namespace OrderingApp
             pnlCheese.Visible = false;
             pnlToppings.Visible = false;
             pnlSauce.Visible = false;
-            orderStep = "bun";
         }
 
         private void btnCheese_Click(object sender, EventArgs e)
@@ -308,7 +275,6 @@ namespace OrderingApp
             pnlCheese.Visible = true;
             pnlToppings.Visible = false;
             pnlSauce.Visible = false;
-            orderStep = "cheese";
         }
 
         private void btnToppings_Click(object sender, EventArgs e)
@@ -319,7 +285,6 @@ namespace OrderingApp
             pnlCheese.Visible = false;
             pnlToppings.Visible = true;
             pnlSauce.Visible = false;
-            orderStep = "toppings";
         }
 
         private void btnSauce_Click(object sender, EventArgs e)
@@ -330,47 +295,40 @@ namespace OrderingApp
             pnlCheese.Visible = false;
             pnlToppings.Visible = false;
             pnlSauce.Visible = true;
-            orderStep = "sauce";
         }
 
-      
+
         /* Controls for starting building the hamburger.
-         * I decided not to show the prevNext controls until you 
-         have committed to building a custom burger. 
-         otherwise, you have to deal with that big
-         branch point.
-         Note that I also am forcing the orderStep labels
-         * with all of these clicks.
-         Couldn't figure out anything simpler.*/
+         */
 
         private void btnBuild_Click(object sender, EventArgs e)
         {
             pnlOrderType.Visible = false;
             pnlBuild.Visible = true;
+            pnlLocation.Visible = false;
             standardBurger = true;
             pnlPrevNext.Visible = true;
-            orderStep = "build";
         }
-            
+
         private void btnSpecialty_Click(object sender, EventArgs e)
-        { pnlOrderType.Visible = false;
+        {
+            pnlOrderType.Visible = false;
             pnlSpecialty.Visible = true;
             standardBurger = false;
             pnlPrevNext.Visible = true;
-            orderStep = "specialty";
         }
 
         private void btnBuildMyBurger_Click(object sender, EventArgs e)
-        { pnlBuild.Visible = false;
+        {
+            pnlBuild.Visible = false;
             pnlBun.Visible = true;
             pnlNav.Visible = true;
             pnlPrevNext.Visible = true;
-            orderStep = "bun";
         }
 
-     
+
         //choose your bun!!
-        
+
         /* Now we start choosing some ingredients!
          * I set it up so you can only choose one bun
          * (it gets its own label, and only one option
@@ -381,34 +339,24 @@ namespace OrderingApp
         {
             string bunType = Bun.createBun("Wheat Bun");
             lblStackBun.Text = bunType;
-            orderStep = "bun";
         }
-        
+
         private void btnWhiteBun_Click(object sender, EventArgs e)
         {
             string bunType = Bun.createBun("White Bun");
             lblStackBun.Text = bunType;
-            orderStep = "bun";
         }
 
         private void btnPotatoBun_Click(object sender, EventArgs e)
-        {   
+        {
             string bunType = Bun.createBun("Potato Bun");
             lblStackBun.Text = bunType;
-            orderStep = "bun";
         }
 
-        
+
         //choose your cheese!!//
         /* Choose as many cheese as you want!
-         * I did not work on making it erase other 
-         * cheeses if you chose 'no cheese'. So for now you
-         * can choose 'no cheese' plus other cheeses. I would
-         * have to think this thru.
-         * This is where I start using the 'allChosenXXX' strings
-         * as a repository for all the ingredients chosen in that category.
-         * They can be printed out (on left panel) as segregated
-         * items.
+         * 
          * I'm still wrapping my head around the creatCheese and 
          * createDisplay methods, so some of the buttons use them
          * and some done't.
@@ -416,127 +364,115 @@ namespace OrderingApp
 
         private void btnCheese1_Click(object sender, EventArgs e)
         {
-           string cheeseType = Cheese.createCheese("American Cheese");
-           string displayOrder = Display.createDisplay(cheeseType, 1);
-           lblStack.Text += displayOrder;
-            optionsArray[1] = cheeseType + "\n";
-           allChosenCheeses += optionsArray[1];
-           orderStep = "cheese";
+            string cheeseType = Cheese.createCheese("American Cheese");
+            string displayOrder = Display.createDisplay(cheeseType, 1);
+            lblStack.Text += displayOrder + "\n";
+            optionsArray[1] = cheeseType ;
+            allChosenCheeses += optionsArray[1] + "  ";
         }
 
         private void btnCheese2_Click(object sender, EventArgs e)
         {
             string cheeseType = Cheese.createCheese("Cheddar Cheese");
-            optionsArray[1] = cheeseType + "\n";
-            lblStack.Text += optionsArray[1];
-            allChosenCheeses += optionsArray[1];
-            orderStep = "cheese";
+            optionsArray[1] = cheeseType ;
+            lblStack.Text += optionsArray[1] + "\n";
+            allChosenCheeses += optionsArray[1] + "  ";
         }
 
         private void btnCheese3_Click(object sender, EventArgs e)
         {
             string cheeseType = Cheese.createCheese("Swiss Cheese");
-            optionsArray[1] = cheeseType + "\n";
-            lblStack.Text += optionsArray[1];
-            allChosenCheeses += optionsArray[1];
-            orderStep = "cheese";
+            optionsArray[1] = cheeseType ;
+            lblStack.Text += optionsArray[1] + "\n";
+            allChosenCheeses += optionsArray[1] + "  ";
         }
 
         private void btnNoCheese_Click(object sender, EventArgs e)
         {
             string cheeseType = Cheese.createCheese("No Cheese");
-            optionsArray[1] = cheeseType + "\n";
-            lblStack.Text += optionsArray[1];
-            allChosenCheeses += optionsArray[1];
-            orderStep = "cheese";
+            optionsArray[1] = cheeseType ;
+            lblStack.Text += optionsArray[1] + "\n";
+            allChosenCheeses += optionsArray[1] + "  ";
         }
 
-       
+ 
         //choose your toppings!!
-        //As discussed, I added code to use the arrays to segregate the 
-        //ingredients by array position. 
-        //I'm sure there's a way to put that into the display
-        //method but this is a start.
+        //
 
         private void btnPickles_Click(object sender, EventArgs e)
         {
             string toppingsType = Toppings.createTopping("Pickles");
             string displayOrder = Display.createDisplay(toppingsType, 2);
-            lblStack.Text += displayOrder;
-            optionsArray[2] = toppingsType + "\n";
-            allChosenToppings += optionsArray[2]; 
-            orderStep = "toppings";
+            lblStack.Text += displayOrder+ "\n";
+            optionsArray[2] = toppingsType ;
+            allChosenToppings += optionsArray[2] + "  ";
         }
 
         private void btnTomato_Click(object sender, EventArgs e)
         {
             string toppingsType = Toppings.createTopping("Tomatoes");
             string displayOrder = Display.createDisplay(toppingsType, 2);
-            lblStack.Text += displayOrder;
-            optionsArray[2] = toppingsType + "\n";
-            allChosenToppings += optionsArray[2];
-            orderStep = "toppings";
+            lblStack.Text += displayOrder + "\n";
+            optionsArray[2] = toppingsType ;
+            allChosenToppings += optionsArray[2] + "  ";
         }
 
         private void btnLettuce_Click(object sender, EventArgs e)
         {
             string toppingType = Toppings.createTopping("Lettuce");
-            optionsArray[2] = toppingType + "\n";
-            allChosenToppings += optionsArray[2];
+            optionsArray[2] = toppingType ;
+            allChosenToppings += optionsArray[2] + "  " ;
             //this still is using the old way of making the display.
-            lblStack.Text += optionsArray[2];
-            orderStep = "toppings";
+            lblStack.Text += optionsArray[2] + "\n";
         }
 
         private void btnOnion_Click(object sender, EventArgs e)
         {
             string toppingType = Toppings.createTopping("Onion");
-            optionsArray[2] = toppingType + "\n";
-            lblStack.Text += optionsArray[2];
-            allChosenToppings += optionsArray[2];
-            orderStep = "toppings";
+            optionsArray[2] = toppingType ;
+            lblStack.Text += optionsArray[2] + "\n";
+            allChosenToppings += optionsArray[2] + "  ";
         }
+        
 
-       
         //choose your sauces!!//
 
         private void btnKetsup_Click(object sender, EventArgs e)
         {
             string sauceType = Sauces.createSauces("Ketchup");
-            optionsArray[3] = sauceType + "\n";
-            lblStack.Text += optionsArray[3];
-            allChosenSauces += optionsArray[3];
-            orderStep = "sauce";
+            optionsArray[3] = sauceType;
+            lblStack.Text += optionsArray[3] + "\n";
+            allChosenSauces += optionsArray[3] + "  ";
+            //orderStep = "sauce";
         }
 
         private void btnMayo_Click(object sender, EventArgs e)
         {
             string sauceType = Sauces.createSauces("Mayo");
-            optionsArray[3] = sauceType + "\n";
-            lblStack.Text += optionsArray[3];
-            allChosenSauces += optionsArray[3];
-            orderStep = "sauce";
+            optionsArray[3] = sauceType ;
+            lblStack.Text += optionsArray[3] + "\n";
+            allChosenSauces += optionsArray[3] + "  ";
+            //orderStep = "sauce";
         }
 
         private void btnMustard_Click(object sender, EventArgs e)
         {
             string sauceType = Sauces.createSauces("Mustard");
-            optionsArray[3] = sauceType + "\n";
-            lblStack.Text += optionsArray[3];
-            allChosenSauces += optionsArray[3];
-            orderStep = "sauce";
+            optionsArray[3] = sauceType ;
+            lblStack.Text += optionsArray[3] + "\n";
+            allChosenSauces += optionsArray[3] + "  ";
+            //orderStep = "sauce";
         }
 
         private void btnBBQ_Click(object sender, EventArgs e)
         {
             string sauceType = Sauces.createSauces("BBQ");
-            optionsArray[3] = sauceType + "\n";
-            lblStack.Text += optionsArray[3];
-            allChosenSauces += optionsArray[3];
-            orderStep = "sauce";
+            optionsArray[3] = sauceType ;
+            lblStack.Text += optionsArray[3] + "\n";
+            allChosenSauces += optionsArray[3] + "  ";
+            //orderStep = "sauce";
         }
 
-      
         //set the 'btnNext' button to enabled-true once it has been clicked!//
 
         private void btnAllDone_Click(object sender, EventArgs e)
@@ -560,8 +496,14 @@ namespace OrderingApp
             pnlSummary.Visible = true;
 
             if (standardBurger)
-            {lblFinalOrderReport.Text = "You ordered a delicious hamburger " + takeOut +
-                    "\non a " + lblStackBun.Text + " \nwith " + lblStack.Text;
+            {
+                lblFinalOrderReport.Text = "You ordered a delicious hamburger " 
+                    + takeOut 
+                    + "\nBun: " 
+                    + lblStackBun.Text
+                    + "\nCheese: "   + allChosenCheeses
+                    + "\nSauce: "   + allChosenSauces
+                    + "\nToppings: " + allChosenToppings;
             }
             else
             { lblFinalOrderReport.Text = "You ordered a delicious " + lblStack.Text + takeOut; }
@@ -573,10 +515,14 @@ namespace OrderingApp
             pnlLocation.Visible = true;
             pnlOrderType.Visible = false;
             pnlStack.Visible = true;
-            pnlNav.Visible = true;
+            pnlNav.Visible = false;
             pnlPrevNext.Visible = true;
+            btnPrev.Enabled = false;
             lblStack.Text = "  ";
             lblStackBun.Text = "  ";
+            allChosenCheeses = " ";
+            allChosenSauces = " ";
+            allChosenToppings = " ";
         }
 
         private void btnYesDone_Click(object sender, EventArgs e)
@@ -591,24 +537,74 @@ namespace OrderingApp
 
         private void btnBigMac_Click(object sender, EventArgs e)
         {
-            lblStack.Text = "Big Mac\n"; 
+            lblStack.Text = "Big Mac\n";
         }
 
         private void btnVeggieBurger_Click(object sender, EventArgs e)
         {
-            lblStack.Text = "Veggie Burger\n"; 
+            lblStack.Text = "Veggie Burger\n";
         }
 
         private void clickHandler(object sender)
         {
             lblStack.Text = sender.ToString();
         }
-
-        private void btnArrayDisplay_Click(object sender, EventArgs e)
+     
+        private void btnOrderAnother_Click(object sender, EventArgs e)
         {
-            lblArrayDisplay.Text = "Cheese: \n" + allChosenCheeses + "\nTopping: \n" + allChosenToppings + "\nSauce: \n" + allChosenSauces;
+            pnlStart.Visible = true;
+            pnlStack.Visible = true;
+            pnlNav.Visible = false;
+            pnlPrevNext.Visible = false;
+
+            pnlLocation.Visible = false;
+            pnlOrderType.Visible = false;
+
+            pnlBuild.Visible = false;
+            pnlBun.Visible = false;
+            pnlCheese.Visible = false;
+            pnlToppings.Visible = false;
+            pnlSauce.Visible = false;
+
+            pnlSpecialty.Visible = false;
+            pnlSummary.Visible = false;
+            pnlComplete.Visible = false;
+
+            btnPrev.Enabled = true;
+            btnNext.Enabled = true;
+
+            lblStack.Text = "  ";
+            lblStackBun.Text = "  ";
+            allChosenCheeses = " ";
+            allChosenSauces = " ";
+            allChosenToppings = " ";
         }
 
-     
+        //this is for the 'change selection' buttons
+        /* I just reset the array and concatenation
+         * and the choice starts fresh */
+
+        private void btnChangeCheese_Click(object sender, EventArgs e)
+        {
+            optionsArray[1] = "\n ";
+            allChosenCheeses = " ";
+            lblStack.Text = optionsArray[1] + optionsArray[2] + optionsArray[3];
+        }
+
+        private void btnChangeTopping_Click(object sender, EventArgs e)
+        {
+            optionsArray[2] = "\n ";
+            allChosenToppings = " ";
+            lblStack.Text = optionsArray[1] + optionsArray[2] + optionsArray[3];
+        }       
+        
+        private void btnChangeSauce_Click(object sender, EventArgs e)
+        {
+            optionsArray[3] = "\n ";
+            allChosenSauces = " ";
+            lblStack.Text = optionsArray[1] + optionsArray[2] + optionsArray[3];
+        }
+
+ 
     }
-    }
+}
